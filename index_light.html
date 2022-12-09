@@ -19,11 +19,9 @@ a:active, a:hover { outline: 0px; }
 body.typora-export { padding-left: 30px; padding-right: 30px; }
 .typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
 .typora-export .task-list-item input { pointer-events: none; }
-@media screen and (max-width: 500px) { 
+@media screen and (max-width: 500px) {
   body.typora-export { padding-left: 0px; padding-right: 0px; }
   #write { padding-left: 20px; padding-right: 20px; }
-  .CodeMirror-sizer { margin-left: 0px !important; }
-  .CodeMirror-gutters { display: none !important; }
 }
 #write li > figure:last-child { margin-bottom: 0.5rem; }
 #write ol, #write ul { position: relative; }
@@ -46,12 +44,12 @@ h6 { font-size: 1rem; }
 .hidden { display: none; }
 .md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
 a { cursor: pointer; }
-sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
 sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
 #write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
 figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
 figure > table { margin: 0px; }
-tr { break-inside: avoid; break-after: auto; }
+thead, tr { break-inside: avoid; break-after: auto; }
 thead { display: table-header-group; }
 table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
 table.md-table td { min-width: 32px; }
@@ -73,6 +71,7 @@ div.hr:focus { cursor: none; }
 #write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
 .md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
 .CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
 .footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
 .footnotes + .footnotes { margin-top: 0px; }
 .md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
@@ -85,10 +84,10 @@ blockquote > :last-child { margin-bottom: 0px; }
 blockquote > :first-child, li > :first-child { margin-top: 0px; }
 .footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
 #write .footnote-line { white-space: pre-wrap; }
-@media print { 
+@media print {
   body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
-  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
-  .typora-export * { -webkit-print-color-adjust: exact; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
+  .typora-export * { print-color-adjust: exact; }
   .typora-export #write { break-after: avoid; }
   .typora-export #write::after { height: 0px; }
   .is-mac table { break-inside: avoid; }
@@ -109,7 +108,7 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 .task-list-item.md-task-list-item { padding-left: 0px; }
 .md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
 .math { font-size: 1rem; }
-.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
 .md-toc-content { position: relative; margin-left: 0px; }
 .md-toc-content::after, .md-toc::after { display: none; }
 .md-toc-item { display: block; color: rgb(65, 131, 196); }
@@ -122,7 +121,7 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 .md-toc-h4 .md-toc-inner { margin-left: 6em; }
 .md-toc-h5 .md-toc-inner { margin-left: 8em; }
 .md-toc-h6 .md-toc-inner { margin-left: 10em; }
-@media screen and (max-width: 48em) { 
+@media screen and (max-width: 48em) {
   .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
   .md-toc-h4 .md-toc-inner { margin-left: 5em; }
   .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
@@ -130,10 +129,11 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 }
 a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
 .footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
 .md-attr { display: none; }
 .md-fn-count::after { content: "."; }
 code, pre, samp, tt { font-family: var(--monospace); }
-kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
 .md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
 code { text-align: left; }
 a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
@@ -149,7 +149,7 @@ mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
 .md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
 .md-expand mark .md-meta { opacity: 0.3 !important; }
 mark .md-meta { color: rgb(0, 0, 0); }
-@media print { 
+@media print {
   .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
 }
 .md-diagram-panel .messageText { stroke: none !important; }
@@ -162,10 +162,10 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
 .typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
 .typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
-@media screen and (max-width: 1024px) { 
+@media screen and (max-width: 1024px) {
   .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
 }
-@media screen and (max-width: 800px) { 
+@media screen and (max-width: 800px) {
   .typora-export-sidebar { display: none; }
 }
 .outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
@@ -199,15 +199,19 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
 .typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
 .md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
 
 
-@font-face{
-    font-family: 'JetBrains Mono';
-    src: local('JetBrains Mono'),
-    url('file:///Users/chigisoftmacpro/Library/Application%20Support/abnerworks.Typora/themes/drake/JetBrainsMono-BoldItalic.woff2') format('woff2');
-    font-display: swap;
-    font-weight: bold;
-    font-style: italic;
+/*快速自定义配置*/
+:root {
+    --monospace: "JetBrains Mono", "Fira Code", "Cascadia Code", Menlo, "Ubuntu Mono", Consolas, HYZhengYuan; /*代码字体*/
+    --text-font: var(--monospace); /*正文字体*/
+    --title-font: var(--monospace); /*标题字体*/
+    --latex-font: var(--monospace); /*LaTeX字体(不含英语)*/
+    --text-line-height: 1.6; /*正文行间距*/
+    --code-line-height: 1.6; /*代码块行间距*/
+    --p-spacing: 0.8rem; /*段间距*/
+    --text-size: 12px;
 }/*
  * Copyright (C) 2018 Drake, Inc.
  *
@@ -229,11 +233,8 @@ mark .md-meta { color: rgb(0, 0, 0); }
 @include-when-export url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
-    --monospace: "Cascadia Code", "Fira Code", Menlo, "Ubuntu Mono", Consolas; /*code font*/
-    --text-font: var(--monospace); /*default font*/
-    --title-font: var(--monospace); /*title font*/
-
-    --text-color: #333333;
+    --text-color: #202124;
+    --blur-text-color: #c8c8c8;
     --bg-color: #ffffff;
     --control-text-color: var(--text-color);
     --meta-content-color: var(--text-color);
@@ -242,31 +243,31 @@ mark .md-meta { color: rgb(0, 0, 0); }
     --item-hover-bg-color: #E5E5E596;
     --active-file-bg-color: var(--item-hover-bg-color);
 
-    --blur-text-color: rgba(51, 51, 51, 0.5);
-    --drake-accent: #e95f59;
-    --drake-highlight: #d63200;
-    --a-color: #036aca;
-    --variable-color: var(--drake-highlight);
+    --blur-text-color: rgba(32, 33, 36, 0.5);
+    --drake-accent: #5784ec;
+    --drake-highlight: #3a474e;
+    --a-color: #1769e0;
+    --variable-color: #d01884;
     --outline-active-color: var(--a-color);
-    --code-block-bg-color: #2b2b2b;
-    --code-block-color: #A9B7C6;
-    --title-color: #135ce0;
-    --blockquote-border-color: #b2aec5;
-    --blockquote-color: #595959;
-    --blockquote-bg-color: #fff9f9;
+    --code-block-bg-color: #f8f9fa;
+    --code-block-color: #3a474e;
+    --title-color: #202124;
+    --blockquote-border-color: #275796;
+    --blockquote-color: #275796;
+    --blockquote-bg-color: #e5f4fd;
     --strong-color: var(--title-color);
     --h2-underline-color: var(--title-color);
     --horizontal-divider-color: var(--title-color);
-    --height-light-color: var(--drake-highlight);
-    --height-light-border-color: var(--drake-highlight);
+    --height-light-color: var(--text-color);
+    --height-light-border-color: var(--text-color);
     --yaml-color: #777777;
     --yaml-bg-color: #f7f7f7;
     --footnotes-bg-color: #3c3d3e;
     --footnotes-highlight: #FFD760;
-    --table-border-color: #dfe2e5;
-    --table-header-bg-color: #f6f8fa;
+    --table-border-color: #dadce0;
+    --table-header-bg-color: #f1f3f4;
     --table-bg-color: var(--bg-color);
-    --table-n2-bg-color: #f6f8fa;
+    --table-n2-bg-color: var(--bg-color);
     --input-bg-color: var(--item-hover-bg-color);
     --btn-hover-bg-color: var(--item-hover-bg-color);
     --checkbox-checked: url("data:image/svg+xml,%3Csvg class='icon' viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cpath d='M425.984 726.016l384-384-59.99-61.995-324.01 324.011-152.021-152.021L213.973 512zm384-598.016q36.01 0 61.013 25.984T896 213.974v596.01q0 34.005-25.003 59.99t-61.013 25.983h-596.01q-36.011 0-61.014-25.984t-25.003-59.989v-596.01q0-34.006 25.003-59.99T213.973 128h596.011z' fill='%2365b73b'/%3E%3C/svg%3E");
@@ -274,7 +275,7 @@ mark .md-meta { color: rgb(0, 0, 0); }
 }
 
 html {
-    font-size: 12px;
+    font-size: var(--text-size);
 }
 
 body {
@@ -288,33 +289,65 @@ body {
     overflow-x: hidden;
 }
 
-#write {
-    background-image: linear-gradient(
-            90deg
-            ,rgba(60,10,30,.04) 3%,transparent 0),linear-gradient(
-            1turn
-            ,rgba(60,10,30,.04) 3%,transparent 0);
-    background-size: 20px 20px;
-    background-position: 50%;
+p {
+    line-height: var(--text-line-height);
 }
 
 /*code block*/
 .md-fences {
     font-size: 1rem;
-    padding: 0.5rem !important;
-    border-radius: 2px;
+    padding: 12px !important;
+    border-radius: 8px;
     word-wrap: normal;
     background-color: var(--code-block-bg-color);
     color: var(--code-block-color);
-    border: none;
+    border: .1em solid #e8eaed;
+    line-height: var(--code-line-height);
 }
-.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) *,
-.on-focus-mode .md-fences.md-focus .CodeMirror-code > :not(.CodeMirror-activeline) *,
-.on-focus-mode .md-htmlblock.md-focus .CodeMirror-code > :not(.CodeMirror-activeline) * {
-    color: #909090 !important
+
+/*inline latex*/
+.MathJax {
+    font-size: 120% !important;
+}
+.MathJax text, .MathJax use {
+    font-family: var(--latex-font);
+}
+/*math-block latex*/
+.md-math-block .MathJax {
+    font-size: 130% !important;
 }
 
 /*mermaid*/
+[mermaid-type="journey"] line {
+    stroke: #7a7a7a !important;
+}
+[mermaid-type="journey"] .label {
+    color: #333 !important;
+}
+[id^=mermaidChart] .relationshipLabelBox {
+    fill: var(--bg-color) !important;
+    opacity: 1 !important;
+    background-color: var(--bg-color) !important;
+}
+[id^=mermaidChart] .legend {
+    fill: var(--text-color) !important;
+}
+[id^=mermaidChart] g.label {
+    font-size: 1rem !important;
+}
+[id^=mermaidChart] line.divider {
+    stroke: var(--table-border-color) !important;
+}
+[id^=mermaidChart] span.nodeLabel {
+    color: var(--code-block-color) !important;
+    line-height: 1.8rem;
+}
+tspan {
+    color: var(--text-color)
+}
+[id^=mermaidChart] .entityLabel {
+    fill: var(--code-block-color) !important;
+}
 [id^=mermaidChart] {
     fill: var(--text-color) !important;
 }
@@ -327,7 +360,7 @@ body {
     font-family: var(--text-font) !important;
     font-size: 1rem !important;
 }
-.md-diagram-panel-preview .actor { /*方块*/
+.md-diagram-panel-preview .actor, .md-diagram-panel-preview .entityBox { /*方块*/
     stroke: var(--table-border-color) !important;
     fill: var(--code-block-bg-color) !important;
 }
@@ -396,18 +429,19 @@ pre.md-fences-advanced.md-focus .md-fences-adv-panel {
     fill: var(--code-block-bg-color) !important;
 }
 #write .md-diagram-panel .md-diagram-panel-preview div { /*形状内文字*/
-    color: var(--code-block-color) !important;
+    color: var(--code-block-color);
     font-family: var(--text-font) !important;
     font-size: 1rem !important;
 }
 
 /*code snippet*/
 #write code, tt {
-    margin: 0 2px;
-    border-radius: 2px;
+    margin: 0 4px;
     color: var(--drake-highlight);
-    background-color: #fff5f5;
-    padding: .065em .4em;
+    border: .1rem solid #e8eaed;
+    background: #f8f9fa;
+    border-radius: 4px;
+    padding: .1rem .4rem;
 }
 
 /*variable*/
@@ -444,21 +478,9 @@ var {
 }
 
 /*quote block*/
-blockquote:before {
-    display: block;
-    position: absolute;
-    content: '';
-    width: 4px;
-    left: 0;
-    top: 0;
-    height: 100%;
-    background-color: var(--blockquote-border-color);
-    border-radius: 2px;
-}
-
 blockquote {
-    color: var(--blockquote-color);
-    border-radius: 2px;
+    color: var(--blockquote-color) !important;
+    border-radius: 4px;
     padding: 10px 16px;
     background-color: var(--blockquote-bg-color);
     position: relative;
@@ -474,6 +496,13 @@ blockquote {
 }
 
 /*link*/
+.on-focus-mode #write a .md-plain:hover, .on-focus-mode .md-htmlblock-container a:hover {
+    border-bottom: .1rem solid var(--blur-text-color);
+}
+#write a .md-plain:hover, .md-htmlblock-container a:hover,
+.on-focus-mode #write .md-focus a .md-plain:hover, .on-focus-mode .md-focus .md-htmlblock-container a:hover {
+    border-bottom: .1rem solid var(--a-color);
+}
 #write a {
     color: var(--a-color);
     text-decoration: none;
@@ -481,18 +510,16 @@ blockquote {
 #write h2 a .md-plain {
     border-bottom: .2rem solid var(--a-color);
 }
-.on-focus-mode #write a .md-plain, .on-focus-mode .md-htmlblock-container a:hover {
-    border-bottom: .1rem solid var(--blur-text-color);
-}
-#write a .md-plain, .md-htmlblock-container a:hover,
-.on-focus-mode #write .md-focus a .md-plain, .md-focus .md-htmlblock-container a:hover {
-    border-bottom: .1rem solid var(--a-color);
-}
 [md-inline=link] a {
     margin: 0 .2rem;
 }
-a:any-link {
+#write a code, a:any-link {
     color: var(--a-color);
+}
+#write a code:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 0.1em;
 }
 
 img {
@@ -550,11 +577,26 @@ h1 {
     margin-top: 0;
 }
 
-h2 .md-plain {
-    padding-bottom: .3rem;
-    border-bottom: .2rem solid var(--h2-underline-color);
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
 }
-
+#write h2:before {
+    content: "「";
+    position: relative;
+    top: -0.5rem;
+    left: -1rem;
+}
+#write h2:after {
+    content: "」";
+    position: relative;
+    top: 0.5rem;
+}
+h2 > .md-plain {
+    line-height: 3rem;
+    position: relative;
+    left: -0.5rem;
+}
 .on-focus-mode h2.md-end-block.md-heading:not(.md-focus):not(.md-focus-container):after {
     background-color: var(--blur-text-color) !important;
 }
@@ -614,18 +656,16 @@ h6 code {
     font-size: inherit !important;
 }
 
-p,
-blockquote,
-ul,
-ol,
-dl,
-table {
-    margin: 0.8em 0;
+p, blockquote, ul, ol, dl, table {
+    margin: var(--p-spacing) 0;
 }
 
 li > ol,
 li > ul {
     margin: 0 0;
+}
+li {
+    margin: 0.5em 0;
 }
 
 hr {
@@ -698,8 +738,11 @@ ol:last-child {
     margin-bottom: 0;
 }
 
-table {
-    padding: 0;
+.ty-table-edit {
+    margin-top: -1rem !important;
+}
+#write table {
+    margin-top: 1rem;
     word-break: initial;
     background-color: var(--table-bg-color);
 }
@@ -739,6 +782,10 @@ table tr td:last-child {
     padding: 0 5px 0 2px;
 }
 
+#write table thead th {
+    background-color: var(--table-header-bg-color);
+}
+
 /* height light */
 #write mark {
     border: .1em solid var(--height-light-border-color);
@@ -760,7 +807,6 @@ kbd {
     font-size: .95rem;
     padding: .3em .4em;
     border-radius: .4em;
-    vertical-align: top;
     box-shadow: .1em .1em .2em rgba(0, 0, 0, 0.3);
 }
 
@@ -960,7 +1006,7 @@ footer {
 .file-node-open-state {
     margin-right: .5rem;
 }
-.file-node-icon{
+.file-node-icon {
     margin-right: .5rem;
 }
 
@@ -1114,7 +1160,6 @@ div.code-tooltip-content {
     width: 1.6rem;
     margin-left: -2em;
 }
-
 #write .ul-list li.md-task-list-item.task-list-not-done::before {
     content: "";
     background: var(--checkbox-unchecked) 0 0 no-repeat;
@@ -1124,6 +1169,9 @@ div.code-tooltip-content {
     height: 1.6rem;
     width: 1.6rem;
     margin-left: -2em;
+}
+.task-list-item p {
+    line-height: 1.6rem;
 }
 
 /*insert table*/
@@ -1249,123 +1297,83 @@ a.ty-link {
 
 /**
     code render
-    Name: IntelliJ IDEA darcula theme
+    Name: IntelliJ IDEA light theme
     From IntelliJ IDEA by JetBrains
  */
 .cm-s-inner.CodeMirror {
     background: none;
     color: var(--code-block-color);
 }
-.cm-s-inner span.cm-meta {
-    color: #BBB529;
-}
 .cm-s-inner span.cm-number {
-    color: #6897BB;
+    color: #c5221f;
 }
-.cm-s-inner span.cm-keyword {
-    color: #CC7832;
+.cm-s-inner span.cm-atom {
+    color: #c5221f;
 }
 .cm-s-inner span.cm-def {
-    color: #FFD760;
+    color: #00f;
 }
 .cm-s-inner span.cm-variable {
     color: var(--code-block-color);
 }
 .cm-s-inner span.cm-variable-2 {
-    color: var(--code-block-color);
+    color: #00627A;
 }
-.cm-s-inner span.cm-variable-3 {
-    color: #9876AA;
-}
-.cm-s-inner span.cm-type {
-    color: #AABBCC;
+.cm-s-inner span.cm-variable-3, .cm-s-inner span.cm-type {
+    color: #9334e6;
 }
 .cm-s-inner span.cm-property {
-    color: #FFC66D;
+    color: var(--code-block-color);
+}
+.cm-s-inner span.cm-keyword {
+    color: #1967d2;
 }
 .cm-s-inner span.cm-operator {
     color: var(--code-block-color);
 }
+.cm-s-inner span.cm-comment {
+    color: #b80672;
+}
 .cm-s-inner span.cm-string {
-    color: #6A8759;
+    color: #008000;
 }
 .cm-s-inner span.cm-string-2 {
-    color: #6A8759;
-}
-.cm-s-inner span.cm-comment {
-    color: #787878;
-}
-.cm-s-inner span.cm-link {
-    color: #CC7832;
-}
-.cm-s-inner span.cm-atom {
-    color: #CC7832;
-}
-.cm-s-inner span.cm-error {
-    color: #BC3F3C;
-}
-.cm-s-inner span.cm-tag {
-    color: #E8BF6A;
-}
-.cm-s-inner span.cm-quote {
-    color: #a6e22e;
-}
-.cm-s-inner span.cm-attribute {
-    color: #9876AA;
+    color: #008000;
 }
 .cm-s-inner span.cm-qualifier {
-    color: #6A8759;
+    color: var(--code-block-color);
 }
-.cm-s-inner span.cm-bracket {
-    color: #E8BF6A;
+.cm-s-inner span.cm-error {
+    color: red;
+}
+.cm-s-inner span.cm-attribute {
+    color: #9334e6;
+}
+.cm-s-inner span.cm-tag.cm-bracket {
+    color: #1967d2;
+}
+.cm-s-inner span.cm-link {
+    color: #4A86E8;
 }
 .cm-s-inner span.cm-builtin {
-    color: #FF9E59;
+    color: var(--code-block-color);
 }
-.cm-s-inner span.cm-special {
-    color: #FF9E59;
-}
-.cm-s-inner span.cm-matchhighlight {
-    color: #FFFFFF;
-    background-color: rgba(50, 89, 48, .7);
-    font-weight: normal;
-}
-.cm-s-inner span.cm-searching {
-    color: #FFFFFF;
-    background-color: rgba(61, 115, 59, .7);
-    font-weight: normal;
+.cm-s-inner .cm-meta {
+    color: #c5221f;
 }
 .cm-s-inner .CodeMirror-gutters {
     border-right: 1px solid rgba(120, 120, 120, 0.3);
+    background: var(--code-block-bg-color);
 }
 .cm-s-inner .CodeMirror-linenumber {
-    color: #585b5d;
-}
-.cm-s-inner .CodeMirror-matchingbracket {
-    background-color: #3B514D;
-    color: #FFEF28 !important;
-}
-.cm-s-inner .CodeMirror-selected {
-    background: #214283 !important;
-}
-.cm-s-inner .CodeMirror-selectedtext {
-    background: #214283 !important;
-}
-.cm-s-typora-default .CodeMirror-selectedtext {
-    background: var(--select-text-bg-color) !important;
-}
-.cm-overlay.CodeMirror-selectedtext {
-    background: var(--select-text-bg-color) !important;
-}
-.cm-s-inner div.CodeMirror-cursor {
-    border-left: 1px solid var(--code-block-color);
+    color: #787878;
 }
 
  @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
-</style><title>Online Résumé</title>
+</style><title>cv</title>
 </head>
 <body class='typora-export'><div class='typora-export-content'>
-<div id='write'  class=''><h1 id='flutter-developer'><span>Flutter Developer</span></h1><h2 id='about'><span>About</span></h2><figure><table><thead><tr><th><span>Name</span></th><th><span>Nna Prince</span></th></tr></thead><tbody><tr><td><span>Age</span></td><td><span>22</span></td></tr><tr><td><span>Working Years</span></td><td><span>4</span></td></tr><tr><td><span>Marital status</span></td><td><span>Single</span></td></tr><tr><td><span>Location</span></td><td><span>Port Harcourt, Nigeria</span></td></tr><tr><td><span>Physical Status</span></td><td><span>Overweight</span></td></tr><tr><td><span>Languages</span></td><td><mark><span>Flutter</span></mark><span> </span><mark><span>Dart</span></mark><span> </span><mark><span>Java</span></mark><span> </span><mark><span>C</span></mark></td></tr></tbody></table></figure><p>&nbsp;</p><h2 id='education'><span>Education</span></h2><p><span>2016 - 2020    Bells University of Technology – Ota, Ogun State, Nigeria. Bachelor of Technology in Computer Science.</span></p><p>&nbsp;</p><h2 id='skill-points'><span>Skill Points</span></h2><ul><li><span>Familiar with using Mac/Windows/Linux</span></li><li><span>Familiar with Git version control management</span></li><li><span>Played with MVC, MVVM, Clean Architecture</span></li><li><span>Played with multiple forms of CI/CD</span></li><li><span>Played with various </span><mark><span>Flutter</span></mark><span> state management techniques</span></li><li><span>Played with a couple of </span><mark><span>Dart</span></mark><span> server frameworks</span></li><li><span>Familiar with semantic versioning and conventional commits</span></li><li><span>Familiar with Firebase</span></li><li><span>Familiar with SOLID principles</span></li></ul><p>&nbsp;</p><h2 id='positions'><span>Positions</span></h2><p>&nbsp;</p><figure><table><thead><tr><th><span>Time</span></th><th><span>Company Name</span></th><th><span>Position</span></th></tr></thead><tbody><tr><td><span>January 2021 - Present</span></td><td><span>Chigisoft</span></td><td><span>Lead Mobile Developer</span></td></tr><tr><td><span>July 2020 - December 2020</span></td><td><span>Chigisoft</span></td><td><span>Mobile Developer</span></td></tr><tr><td><span>May 2019 - August 2019</span></td><td><span>Chigisoft</span></td><td><span>Mobile Developer Intern</span></td></tr></tbody></table></figure><p>&nbsp;</p><h2 id='projects'><span>Projects</span></h2><h3 id='rivers-app-android'><span>Rivers App </span><a href='https://play.google.com/store/apps/details?id=com.riversstate.app'><span>android</span></a></h3><p><span>2019</span></p><p><span>A simple application with information about Rivers state, as well as notifications of upcoming events.</span></p><ul><li><span>Implemented frontend from UI.</span></li><li><span>Integrated API&#39;s.</span></li><li><span>Used no state management solution, turned out to be a horrible mess of spaghetti code.</span></li></ul><p>&nbsp;</p><h3 id='get-stacked-pub'><span>Get Stacked </span><a href='https://pub.dev/packages/get_stacked'><span>pub</span></a></h3><p><span>A flutter package for state management combining the navigation and dependency injection features of GetX with the structure defined by the stacked architecture.</span></p><p>&nbsp;</p><h3 id='skyewallet-android-ios'><span>Skyewallet </span><a href='https://play.google.com/store/apps/details?id=com.skyewallet.skye_wallet'><span>android</span></a><span> </span><a href='https://apps.apple.com/us/app/skye-wallet-buy-sell-crypto/id1587180582'><span>ios</span></a></h3><p><span>2020 - 2021</span></p><p><span>A simple easy to use crypto wallet.</span></p><ul><li><span>Implemented frontend from UI.</span></li><li><span>Integrated api&#39;s.</span></li><li><span>Managed state with GetX.</span></li></ul><p>&nbsp;</p><h3 id='flitaa-android-ios'><span>Flitaa </span><a href='https://play.google.com/store/apps/details?id=com.flitaa.app'><span>android</span></a><span> </span><a href='https://apps.apple.com/us/app/flitaa/id1566777501'><span>ios</span></a></h3><p><span>2020 - Present</span></p><p><span>Even simpler and easier to use crypto wallet.</span></p><ul><li><span>Implemented frontend from UI.</span></li><li><span>Integrated api&#39;s.</span></li><li><span>Managed state with GetX.</span></li></ul><p>&nbsp;</p><h3 id='landpay-internal-testing'><span>Landpay </span><mark><span>internal-testing</span></mark></h3><p><span>2022 - Present</span></p><p><span>Real estate investment platform.</span></p><ul><li><span>Implemented frontend from UI.</span></li><li><span>Integrated api&#39;s.</span></li><li><span>Handled errors using function programming techniques.</span></li><li><span>Managed state with BloC.</span></li><li><span>Built using </span><a href='http://pub.dev/packages/very_good_cli'><span>very-good-cli</span></a><span>.</span></li><li><span>Separate reusable components into external packages.</span></li><li><span>Unit tested some imternal packages.</span></li><li><span>Localization with </span><code>flutter_localizations</code><span>.</span></li><li><span>Managed with </span><a href='https://melos.invertase.dev/'><span>melos</span></a><span>.</span></li><li><span>Uses </span><a href='http://dartcodemetrics.dev/'><span>dart-code-metrics</span></a><span>.</span></li><li><span>CI/CD with </span><a href='https://codemagic.io'><span>codemagic</span></a></li></ul><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p align="right"><small><a href="https://github.com/liangjingkanji/Resume-Template">Generated by DrakeTyporaTheme</a></small></p>
-<p align="right"><small><a href="index.html">Dark Theme</a></small></p></div></div>
+<div id='write'  class=''><h1 id='flutter-developer'><span>Flutter Developer</span></h1><h2 id='about'><span>About</span></h2><figure><table><thead><tr><th><span>Name</span></th><th><span>Nna Prince</span></th></tr></thead><tbody><tr><td><span>Age</span></td><td><span>22</span></td></tr><tr><td><span>Working Years</span></td><td><span>4</span></td></tr><tr><td><span>Marital status</span></td><td><span>Single</span></td></tr><tr><td><span>Location</span></td><td><span>Port Harcourt, Nigeria</span></td></tr><tr><td><span>Physical Status</span></td><td><span>Overweight</span></td></tr><tr><td><span>Languages</span></td><td><mark><span>Flutter</span></mark><span> </span><mark><span>Dart</span></mark><span> </span><mark><span>Java</span></mark><span> </span><mark><span>C</span></mark></td></tr></tbody></table></figure><h2 id='education'><span>Education</span></h2><p><span>2016 - 2020    Bells University of Technology – Ota, Ogun State, Nigeria. Bachelor of Technology in Computer Science.</span></p><h2 id='skill-points'><span>Skill Points</span></h2><ul><li><span>Familiar with using Mac/Windows/Linux</span></li><li><span>Familiar with Git version control management</span></li><li><span>Played with MVC, MVVM, Clean Architecture</span></li><li><span>Played with multiple forms of CI/CD</span></li><li><span>Played with various </span><mark><span>Flutter</span></mark><span> state management techniques</span></li><li><span>Played with a couple of </span><mark><span>Dart</span></mark><span> server frameworks</span></li><li><span>Familiar with semantic versioning and conventional commits</span></li><li><span>Familiar with Firebase</span></li><li><span>Familiar with SOLID principles</span></li></ul><h2 id='positions'><span>Positions</span></h2><figure><table><thead><tr><th><span>Time</span></th><th><span>Company Name</span></th><th><span>Position</span></th></tr></thead><tbody><tr><td><span>January 2021 - Present</span></td><td><span>Chigisoft</span></td><td><span>Lead Mobile Developer</span></td></tr><tr><td><span>July 2020 - December 2020</span></td><td><span>Chigisoft</span></td><td><span>Mobile Developer</span></td></tr><tr><td><span>May 2019 - August 2019</span></td><td><span>Chigisoft</span></td><td><span>Mobile Developer Intern</span></td></tr></tbody></table></figure><h2 id='projects'><span>Projects</span></h2><h3 id='rivers-app-android'><span>Rivers App </span><a href='https://play.google.com/store/apps/details?id=com.riversstate.app'><span>android</span></a></h3><p><span>2019</span></p><p><span>A simple application with information about Rivers state, as well as notifications of upcoming events.</span></p><ul><li><span>Implemented frontend from UI.</span></li><li><span>Integrated API&#39;s.</span></li><li><span>Used no state management solution, turned out to be a horrible mess of spaghetti code.</span></li></ul><h3 id='get-stacked-pub'><span>Get Stacked </span><a href='https://pub.dev/packages/get_stacked'><span>pub</span></a></h3><p><span>A flutter package for state management combining the navigation and dependency injection features of GetX with the structure defined by the stacked architecture.</span></p><h3 id='skyewallet-android-ios'><span>Skyewallet </span><a href='https://play.google.com/store/apps/details?id=com.skyewallet.skye_wallet'><span>android</span></a><span> </span><a href='https://apps.apple.com/us/app/skye-wallet-buy-sell-crypto/id1587180582'><span>ios</span></a></h3><p><span>2020 - 2021</span></p><p><span>A simple easy to use crypto wallet.</span></p><ul><li><span>Implemented frontend from UI.</span></li><li><span>Integrated api&#39;s.</span></li><li><span>Managed state with GetX.</span></li></ul><h3 id='flitaa-android-ios'><span>Flitaa </span><a href='https://play.google.com/store/apps/details?id=com.flitaa.app'><span>android</span></a><span> </span><a href='https://apps.apple.com/us/app/flitaa/id1566777501'><span>ios</span></a></h3><p><span>2020 - Present</span></p><p><span>Even simpler and easier to use crypto wallet.</span></p><ul><li><span>Implemented frontend from UI.</span></li><li><span>Integrated api&#39;s.</span></li><li><span>Managed state with GetX.</span></li></ul><h3 id='landpay-android'><span>Landpay </span><a href='https://play.google.com/store/apps/details?id=com.landpay.app'><span>android</span></a></h3><p><span>2022 - Present</span></p><p><span>Real estate investment platform.</span></p><ul><li><span>Implemented frontend from UI.</span></li><li><span>Integrated api&#39;s.</span></li><li><span>Handled errors using function programming techniques.</span></li><li><span>Managed state with BloC.</span></li><li><span>Built using </span><a href='http://pub.dev/packages/very_good_cli'><span>very-good-cli</span></a><span>.</span></li><li><span>Separate reusable components into external packages.</span></li><li><span>Unit tested some imternal packages.</span></li><li><span>Localization with </span><code>flutter_localizations</code><span>.</span></li><li><span>Managed with </span><a href='https://melos.invertase.dev/'><span>melos</span></a><span>.</span></li><li><span>Lint rules with </span><a href='http://dartcodemetrics.dev/'><span>dart-code-metrics</span></a><span>.</span></li><li><span>CI/CD with </span><a href='https://codemagic.io'><span>codemagic</span></a></li></ul><h3 id='heavy-bricks-github'><span>Heavy Bricks </span><a href='https://github.com/Prn-Ice/mason_bricks'><span>github</span></a></h3><p><span>A collection of bricks (templates) built with </span><a href='https://brickhub.dev/'><span>mason</span></a><span> to help flutter devs start building apps quicker with the basic boileplate already taken care of.</span></p><h3 id='stack-financial-management-internal-testing-android'><span>Stack: Financial management </span><mark><span>Internal Testing</span></mark><span> </span><a href='https://play.google.com/store/apps/details?id=com.stackelberg.stack'><span>android</span></a></h3><p><span>2022 - Present</span></p><p><span>Financial management application.</span></p><ul><li><span>Implemented frontend from UI.</span></li><li><span>Created some custom ui elements and animations with CustomPaint. </span></li><li><span>Integrated api&#39;s.</span></li><li><span>Handled errors using function programming techniques.</span></li><li><span>Managed state with RiverBloc.</span></li><li><span>Built using my </span><a href='https://brickhub.dev/bricks/heavy_app/0.1.0+1'><span>heavy_app</span></a><span> template brick.</span></li><li><span>Separate reusable components into external packages.</span></li><li><span>Managed with </span><a href='https://melos.invertase.dev/'><span>melos</span></a><span>.</span></li><li><span>Lint rules with </span><a href='http://dartcodemetrics.dev/'><span>dart-code-metrics</span></a><span>.</span></li><li><span>CI/CD with </span><a href='https://codemagic.io'><span>codemagic</span></a></li></ul><p align="right"><small><a href="https://github.com/liangjingkanji/Resume-Template">Generated by DrakeTyporaTheme</a></small></p>
+<p align="right"><small><a href="https://github.com/liangjingkanji/Resume-Template">Light Theme</a></small></p></div></div>
 </body>
 </html>
