@@ -25,11 +25,21 @@
 - Familiar with Git version control management
 - Played with MVC, MVVM, Clean Architecture
 - Played with multiple forms of CI/CD
-- Played with various <mark>Flutter</mark> state management techniques
-- Played with a couple of <mark>Dart</mark> server frameworks
+- Played with various Flutter state management techniques
+- Played with a couple of Dart server frameworks
 - Familiar with semantic versioning and conventional commits
 - Familiar with Firebase
 - Familiar with SOLID principles
+- Experience with custom animations and UI components in Flutter
+- Proficient in code generation and templating (Mason bricks)
+- Experience with monorepo management (Melos)
+- Strong understanding of HTTP networking and RESTful APIs
+- Familiar with mobile app deployment and store publishing
+- Experience with test-driven development (TDD)
+- Proficient in debugging and performance optimization
+- Experience with localization and internationalization
+- Knowledge of Shell scripting and dotfiles management
+- Familiar with Python for scripting and automation
 
 
 
