@@ -5,7 +5,7 @@
 | Name            | Nna Prince                                                              |
 | --------------- | ----------------------------------------------------------------------- |
 | Age             | 24                                                                      |
-| Working Years   | 6                                                                       |
+| Working Years   | 7                                                                       |
 | Marital status  | Single                                                                  |
 | Location        | Port Harcourt, Nigeria                                                  |
 | Physical Status | Overweight                                                              |
@@ -47,7 +47,7 @@
 
 | Time                      | Company Name | Position                |
 | ------------------------- | ------------ | ----------------------- |
-| January 2023 - Present    | KW Real Estate | Mobile Developer       |
+| February 2023 - Present (2 years) | KW Real Estate | Mobile Developer       |
 | January 2021 - 2023       | Chigisoft    | Lead Mobile Developer   |
 | July 2020 - December 2020 | Chigisoft    | Mobile Developer        |
 | May 2019 - August 2019    | Chigisoft    | Mobile Developer Intern |
