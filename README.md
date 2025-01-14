@@ -5,7 +5,7 @@
 | Name            | Nna Prince                                                              |
 | --------------- | ----------------------------------------------------------------------- |
 | Age             | 24                                                                      |
-| Working Years   | 7                                                                       |
+| Working Years   | 5+                                                                       |
 | Marital status  | Single                                                                  |
 | Location        | Port Harcourt, Nigeria                                                  |
 | Physical Status | Overweight                                                              |
