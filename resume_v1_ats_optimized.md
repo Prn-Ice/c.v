@@ -1,7 +1,7 @@
 # PRINCE NNA
 **Senior Flutter Developer | Full Stack Engineer**
 
-📍 Nigeria | 📧 stormprince77@gmail.com | 🔗 [portfolio.prnice.me](https://portfolio.prnice.me) | 🐙 [github.com/Prn-Ice](https://github.com/Prn-Ice) | 𝕏 [@_prn_ice_](https://twitter.com/_prn_ice_)
+📍 Nigeria | 📧 stormprince77@gmail.com | 🔗 [portfolio.prnice.me](https://portfolio.prnice.me) | 🐙 [github.com/Prn-Ice](https://github.com/Prn-Ice) | 💼 [LinkedIn](https://linkedin.com/in/princenna) | 𝕏 [@_prn_ice_](https://twitter.com/_prn_ice_)
 
 ---
 
@@ -106,6 +106,7 @@ Senior Flutter Developer with **5+ years** of production mobile experience and *
 | [get_stacked](https://pub.dev/packages/get_stacked) | ⭐ 8 | Stacked architecture wrapper on GetX |
 
 ### Contributions
+- **CalcProgrammer1/OpenRGB**: Added Legion 7s Gen8 hardware support (merged)
 - **Fliggy-Mobile/fswitch**: Dart null-safety migration PR
 - **flutter/flutter**: Command execution debugging issue report
 - **nixos-apple-silicon**: Build failure report

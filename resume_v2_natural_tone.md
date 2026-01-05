@@ -1,7 +1,7 @@
 # Prince Nna
 ## Flutter Developer
 
-📍 Nigeria • 🌐 [portfolio.prnice.me](https://portfolio.prnice.me) • 🐙 [Prn-Ice](https://github.com/Prn-Ice) • 𝕏 [@_prn_ice_](https://twitter.com/_prn_ice_)
+📍 Nigeria • 🌐 [portfolio.prnice.me](https://portfolio.prnice.me) • 🐙 [Prn-Ice](https://github.com/Prn-Ice) • 💼 [LinkedIn](https://linkedin.com/in/princenna) • 𝕏 [@_prn_ice_](https://twitter.com/_prn_ice_)
 
 ---
 
@@ -90,6 +90,7 @@ Stacked architecture but with GetX. Because I liked both.
 
 ### Contributions
 
+- Added Legion 7s Gen8 support to OpenRGB (merged upstream)
 - Migrated `fswitch` to null safety
 - Reported Flutter tooling issues
 - Helped debug NixOS + Flutter integration

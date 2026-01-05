@@ -124,6 +124,7 @@ Based on GitHub activity and provided context, your profile consistently demonst
 #### External Contributions
 | Project | Contribution |
 |---------|--------------|
+| [CalcProgrammer1/OpenRGB](https://github.com/CalcProgrammer1/OpenRGB/commit/7ef7edb) | Add Legion 7s Gen8 hardware support |
 | [Fliggy-Mobile/fswitch](https://github.com/Fliggy-Mobile/fswitch/pull/5) | Null-safety migration |
 | [flutter/flutter #53380](https://github.com/flutter/flutter/issues/53380) | Command execution debugging issue |
 | [nixos-apple-silicon #118](https://github.com/nix-community/nixos-apple-silicon/issues/118) | Build failure report |
