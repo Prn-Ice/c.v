@@ -90,6 +90,7 @@ Stacked architecture but with GetX. Because I liked both.
 
 ### Contributions
 
+- Feature PR merged to Stacked (the architecture package I use)
 - Added Legion 7s Gen8 support to OpenRGB (merged upstream)
 - Migrated `fswitch` to null safety
 - Reported Flutter tooling issues

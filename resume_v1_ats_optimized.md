@@ -106,6 +106,7 @@ Senior Flutter Developer with **5+ years** of production mobile experience and *
 | [get_stacked](https://pub.dev/packages/get_stacked) | ⭐ 8 | Stacked architecture wrapper on GetX |
 
 ### Contributions
+- **Stacked-Org/stacked**: Added isScrollControlled param for bottom sheets ([PR #205](https://github.com/Stacked-Org/stacked/pull/205), merged)
 - **CalcProgrammer1/OpenRGB**: Added Legion 7s Gen8 hardware support (merged)
 - **Fliggy-Mobile/fswitch**: Dart null-safety migration PR
 - **flutter/flutter**: Command execution debugging issue report

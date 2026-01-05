@@ -124,6 +124,7 @@ Based on GitHub activity and provided context, your profile consistently demonst
 #### External Contributions
 | Project | Contribution |
 |---------|--------------|
+| [Stacked-Org/stacked](https://github.com/Stacked-Org/stacked/pull/205) | Add isScrollControlled param for bottom sheets (merged) |
 | [CalcProgrammer1/OpenRGB](https://github.com/CalcProgrammer1/OpenRGB/commit/7ef7edb) | Add Legion 7s Gen8 hardware support |
 | [Fliggy-Mobile/fswitch](https://github.com/Fliggy-Mobile/fswitch/pull/5) | Null-safety migration |
 | [flutter/flutter #53380](https://github.com/flutter/flutter/issues/53380) | Command execution debugging issue |
