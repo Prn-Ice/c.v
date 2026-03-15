@@ -19,3 +19,11 @@ doc/api/
 *.js_
 *.js.deps
 *.js.map
+
+# Sensitive / private documents (public repo)
+Rob_Dahl_Resume.pdf
+career_context.md
+career_context_v2.md
+value_add.md
+rob_call_to\ _employers.md
+.DS_Store
