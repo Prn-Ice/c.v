@@ -27,3 +27,6 @@ career_context_v2.md
 value_add.md
 rob_call_to\ _employers.md
 .DS_Store
+
+# Git worktrees
+.worktrees/
