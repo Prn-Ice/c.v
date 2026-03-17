@@ -1,0 +1,79 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - uses: dart-lang/setup-dart@v1
+
+      # Shared package
+      - name: Get shared dependencies
+        working-directory: shared
+        run: dart pub get
+
+      # Build Flutter site
+      - name: Get Flutter dependencies
+        working-directory: portfolio
+        run: flutter pub get
+
+      - name: Build Flutter web (WASM)
+        working-directory: portfolio
+        run: flutter build web --wasm --base-href /
+
+      # Build Jaspr site
+      - name: Install Jaspr CLI
+        run: dart pub global activate jaspr_cli
+
+      - name: Get Jaspr dependencies
+        working-directory: portfolio_jaspr
+        run: dart pub get
+
+      - name: Build Jaspr (SSG)
+        working-directory: portfolio_jaspr
+        env:
+          BASE_PATH: /jaspr
+        run: dart pub global run jaspr_cli:jaspr build
+
+      # Merge outputs
+      - name: Merge Jaspr into Flutter build
+        run: cp -r portfolio_jaspr/build/jaspr portfolio/build/web/jaspr
+
+      # CNAME
+      - name: Copy CNAME
+        run: cp CNAME portfolio/build/web/CNAME
+
+      # Upload
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: portfolio/build/web
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

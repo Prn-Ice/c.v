@@ -1,0 +1,11 @@
+# Dart/Pub
+.dart_tool/
+.packages
+pubspec.lock
+
+# Build output
+/build/
+
+# Generated files
+*.server.options.dart
+*.client.options.dart

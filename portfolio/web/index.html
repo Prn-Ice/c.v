@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prince Nna - Senior Full Stack Engineer specializing in Flutter, React, and cross-platform development">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Prince Nna | Senior Full Stack Engineer">
+  <meta property="og:description" content="Senior Full Stack Engineer specializing in Flutter, React, and cross-platform development">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://portfolio.prnice.me">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Prince Nna">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>Prince Nna | Senior Full Stack Engineer</title>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    /* Loading splash — visible while Flutter initialises */
+    body {
+      margin: 0;
+      background-color: #0F0F0F;
+      overflow: hidden;
+    }
+    #loading {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      z-index: 9999;
+      transition: opacity 0.3s ease-out;
+    }
+    #loading.fade-out {
+      opacity: 0;
+    }
+    #loading .name {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #F5F5F5;
+      letter-spacing: 0.5px;
+    }
+    #loading .bar-track {
+      width: 120px;
+      height: 3px;
+      background: #242424;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    #loading .bar-fill {
+      width: 40%;
+      height: 100%;
+      background: #E95420;
+      border-radius: 2px;
+      animation: slide 1.2s ease-in-out infinite;
+    }
+    @keyframes slide {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(350%); }
+    }
+  </style>
+</head>
+<body>
+  <div id="loading">
+    <span class="name">Prince Nna</span>
+    <div class="bar-track"><div class="bar-fill"></div></div>
+  </div>
+
+  <script>
+    // Remove loading splash once Flutter renders its first frame
+    window.addEventListener('flutter-first-frame', function () {
+      var el = document.getElementById('loading');
+      if (!el) return;
+      el.classList.add('fade-out');
+      el.addEventListener('transitionend', function () { el.remove(); });
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+name: shared
+description: Shared models and data for portfolio sites
+publish_to: 'none'
+
+environment:
+  sdk: ^3.10.0
