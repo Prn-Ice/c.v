@@ -24,6 +24,18 @@ career_context_v2.md
 value_add.md
 .DS_Store
 
+# Generated resumes — kept local because they carry full contact PII
+# (phone number, city). Rebuild from source with scripts/render-resumes.sh.
+# See RESUME_PIPELINE.md for the architecture.
+docs/
+Resume.docx
+Resume.zip
+
+# Local build / preview artifacts
+.playwright-mcp/
+resume-*-preview*.png
+.vscode/
+
 # Git worktrees
 .worktrees/
 
