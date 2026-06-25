@@ -34,8 +34,11 @@ HTML / PDF / DOCX:
 | `resume_v3_frontend_vue_profile` | Frontend / Vue roles |
 
 `docs/` is **gitignored**: these résumés carry full contact PII (phone number,
-city) that the public résumés (`resume_v2_ats_optimized.md`, `index.html`)
-deliberately omit. They are rebuilt locally, never committed.
+city) that the public résumé site (`index.html`) deliberately omits. They are
+rebuilt locally, never committed.
+
+> The earlier `resume_v2_ats_optimized.md` has been retired to `archive/`
+> (gitignored) and is no longer the published résumé.
 
 ## Render pipeline
 

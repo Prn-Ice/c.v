@@ -31,6 +31,9 @@ docs/
 Resume.docx
 Resume.zip
 
+# Archived older resume versions — kept locally, out of the public repo
+archive/
+
 # Local build / preview artifacts
 .playwright-mcp/
 resume-*-preview*.png
