@@ -10,8 +10,9 @@ const bioParagraphs = [
       'in the road a parent can give their child.',
   'Since then, I studied Computer Science at Bells '
       'University of Technology and went on to work with '
-      'brilliant people \u2014 at Chigisoft, and now at Keller '
-      'Williams. I\'ve seen all types of software: from '
+      'brilliant people \u2014 at Chigisoft and Keller Williams, '
+      'and now curating my own product, findaphone.ng. '
+      'I\'ve seen all types of software: from '
       'hostel-made pharmacy management apps to random kernel '
       'patches on a Chinese website to enterprise applications '
       'handling millions of transactions. I\'ve come to '

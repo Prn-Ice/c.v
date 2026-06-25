@@ -1,6 +1,70 @@
 import '../models/case_study.dart';
 
 const caseStudies = [
+  // -- 0. findaphone.ng (featured, current) --
+  CaseStudy(
+    slug: 'findaphone',
+    title: 'findaphone.ng',
+    subtitle: 'A Phone-Buying Platform for Nigeria',
+    summary:
+        'Founded and solely built a live phone-buying platform for the '
+        'Nigerian market. A single-developer Dart monorepo spanning a Jaspr '
+        'web app, a dart_frog API, a pure-Dart scraper, and Supabase Postgres, '
+        'live in production at findaphone.ng.',
+    tags: ['Dart', 'Jaspr', 'dart_frog', 'Supabase', 'Melos', 'Founder'],
+    dateRange: 'Apr 2026 – Present',
+    role: 'Library Curator @ findaphone.ng',
+    liveUrl: 'https://findaphone.ng',
+    gridSpan: 2,
+    sections: [
+      CaseStudySection(
+        title: 'Challenge',
+        content:
+            'Nigerians buying phones face opaque pricing, inconsistent specs, '
+            'and outright scams across fragmented marketplaces. There was no '
+            'trustworthy way to match a budget and a set of priorities to the '
+            'right phone, or to tell a fair listing from a fake one.',
+      ),
+      CaseStudySection(
+        title: 'Approach',
+        content:
+            'Built everything in one Dart monorepo (Melos) so typed models and '
+            'pure business logic travel cleanly across tiers: a Jaspr static '
+            'site with @client interactive islands, a dart_frog REST API that '
+            'loads the whole catalogue into memory at boot, a pure-Dart '
+            'scraper, and Supabase Postgres with row-level security.',
+      ),
+      CaseStudySection(
+        title: 'Curation Engine',
+        content:
+            'As Library Curator, I vet every phone and listing that enters the '
+            'canonical catalogue:',
+        bulletPoints: [
+          'Confidence-scored matcher (Jaccard similarity, brand multiplier, '
+              'exact-model boost) tiers listings into auto-approve, review, '
+              'and catalogue-gap buckets',
+          'Admin review workflow protects already-reviewed rows from '
+              're-scrape clobbering',
+          'Four idempotent enrichment pipelines (spec sheets, benchmark '
+              'scores, review data, image rehosting), each writing its own '
+              'column family',
+          'Two-signal price-sanity filter catches listing scams, including a '
+              'real mismatched-device listing in production',
+        ],
+      ),
+      CaseStudySection(
+        title: 'Impact',
+        content:
+            'Live in production on Cloudflare Pages, Railway, and Supabase with '
+            'continuous deployment. A pure-function recommendation engine '
+            '(eight-category scoring across five entry paths) returns results '
+            'in sub-milliseconds, guarded by a layered test suite (unit, '
+            'integration, schema-contract, end-to-end) behind a build-time '
+            'analyze gate.',
+      ),
+    ],
+  ),
+
   // -- 1. Search Architecture (featured) --
   CaseStudy(
     slug: 'search-architecture',
@@ -11,7 +75,7 @@ const caseStudies = [
         'and CMS (Handlebars). Refactored 1 400+ LOC monolithic widgets into '
         'decomposed Bloc architecture.',
     tags: ['Flutter', 'Bloc', 'Google Maps', 'Cross-Platform'],
-    dateRange: 'Mar 2023 – Present',
+    dateRange: 'Mar 2023 – May 2026',
     role: 'Senior Mobile & Web Developer @ KWRI',
     gridSpan: 2,
     sections: [
@@ -65,7 +129,7 @@ const caseStudies = [
         'Migrated Redux \u2192 Zustand + React Query. Built Compare Map with '
         'geocoded pin placement.',
     tags: ['React', 'TypeScript', 'Zustand', 'GraphQL'],
-    dateRange: 'Mar 2023 – Present',
+    dateRange: 'Mar 2023 – May 2026',
     role: 'Senior Mobile & Web Developer @ KWRI',
     sections: [
       CaseStudySection(
@@ -112,7 +176,7 @@ const caseStudies = [
         'Authored 7 Confluence pages including GA4 tutorials with 6 video '
         'walkthroughs.',
     tags: ['GA4', 'Datadog', 'Documentation', 'Team Enablement'],
-    dateRange: 'Mar 2023 – Present',
+    dateRange: 'Mar 2023 – May 2026',
     role: 'Senior Mobile & Web Developer @ KWRI',
     sections: [
       CaseStudySection(
