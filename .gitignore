@@ -38,6 +38,11 @@ archive/
 resume-*-preview*.png
 .vscode/
 
+# Raw camera originals — masters kept local; web-optimised WebP versions in
+# portfolio/assets/images/photography/ are what get committed.
+# Regenerate them with scripts/compress-photos.sh.
+images_raw/
+
 # Git worktrees
 .worktrees/
 
