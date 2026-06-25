@@ -19,8 +19,7 @@ doc/api/
 *.js.map
 
 # Sensitive / private documents (public repo)
-career_context.md
-career_context_v2.md
+# (career context now lives in docs/, which is gitignored below)
 value_add.md
 .DS_Store
 
