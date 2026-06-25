@@ -8,19 +8,14 @@ final pageStyles = <StyleRule>[
     textAlign: TextAlign.center,
     raw: {'padding-bottom': '48px'},
   ),
-  css('.hero-subtitle').styles(
-    color: Color.variable('--accent'),
-    fontWeight: FontWeight.w600,
-  ),
+  css(
+    '.hero-subtitle',
+  ).styles(color: Color.variable('--accent'), fontWeight: FontWeight.w600),
   css('.hero-summary').styles(
     maxWidth: 600.px,
     margin: Margin.symmetric(horizontal: Unit.auto),
     color: Color.variable('--on-surface-variant'),
-    raw: {
-      'margin-top': '16px',
-      'margin-bottom': '32px',
-      'line-height': '1.7',
-    },
+    raw: {'margin-top': '16px', 'margin-bottom': '32px', 'line-height': '1.7'},
   ),
   css('.hero-ctas').styles(
     display: Display.flex,
@@ -41,42 +36,31 @@ final pageStyles = <StyleRule>[
     fontSize: 0.95.rem,
     raw: {'transition': 'all 0.2s'},
   ),
-  css('.btn-filled').styles(
-    raw: {
-      'background': 'var(--accent)',
-      'color': 'white',
-    },
-  ),
-  css('.btn-filled:hover').styles(
-    raw: {'background': 'var(--accent-light)'},
-  ),
+  css(
+    '.btn-filled',
+  ).styles(raw: {'background': 'var(--accent)', 'color': 'white'}),
+  css('.btn-filled:hover').styles(raw: {'background': 'var(--accent-light)'}),
   css('.btn-outlined').styles(
     color: Color.variable('--on-surface'),
     raw: {'border': '1px solid var(--glass-border)'},
   ),
-  css('.btn-outlined:hover').styles(
-    raw: {'background': 'var(--surface-container-high)'},
-  ),
+  css(
+    '.btn-outlined:hover',
+  ).styles(raw: {'background': 'var(--surface-container-high)'}),
 
   // ── Bento grid ────────────────────────────────────────────
   css('.bento-grid').styles(
     display: Display.grid,
     gap: Gap.all(16.px),
-    raw: {
-      'grid-template-columns': 'repeat(auto-fill, minmax(340px, 1fr))',
-    },
+    raw: {'grid-template-columns': 'repeat(auto-fill, minmax(340px, 1fr))'},
   ),
-  css('.bento-cell.span-2').styles(
-    raw: {'grid-column': 'span 2'},
-  ),
+  css('.bento-cell.span-2').styles(raw: {'grid-column': 'span 2'}),
 
   // ── Skills grid ───────────────────────────────────────────
   css('.skills-grid').styles(
     display: Display.grid,
     gap: Gap.all(16.px),
-    raw: {
-      'grid-template-columns': 'repeat(auto-fill, minmax(280px, 1fr))',
-    },
+    raw: {'grid-template-columns': 'repeat(auto-fill, minmax(280px, 1fr))'},
   ),
 
   // ── Section ───────────────────────────────────────────────
@@ -98,22 +82,14 @@ final pageStyles = <StyleRule>[
   css('.card-summary').styles(
     color: Color.variable('--on-surface-variant'),
     fontSize: 0.9.rem,
-    raw: {
-      'line-height': '1.6',
-      'margin-bottom': '16px',
-    },
+    raw: {'line-height': '1.6', 'margin-bottom': '16px'},
   ),
 
   // ── About page ────────────────────────────────────────────
-  css('.bio-content').styles(
-    maxWidth: 700.px,
-  ),
+  css('.bio-content').styles(maxWidth: 700.px),
   css('.bio-paragraph').styles(
     color: Color.variable('--on-surface-variant'),
-    raw: {
-      'line-height': '1.8',
-      'margin-bottom': '24px',
-    },
+    raw: {'line-height': '1.8', 'margin-bottom': '24px'},
   ),
   css('.site-credits').styles(
     color: Color.variable('--on-surface-variant'),
@@ -122,9 +98,7 @@ final pageStyles = <StyleRule>[
   css('.interests-grid').styles(
     display: Display.grid,
     gap: Gap.all(16.px),
-    raw: {
-      'grid-template-columns': 'repeat(auto-fill, minmax(300px, 1fr))',
-    },
+    raw: {'grid-template-columns': 'repeat(auto-fill, minmax(300px, 1fr))'},
   ),
   css('.interest-row').styles(
     display: Display.flex,
@@ -138,17 +112,39 @@ final pageStyles = <StyleRule>[
   css('.interest-content p').styles(
     color: Color.variable('--on-surface-variant'),
     fontSize: 0.9.rem,
+    raw: {'margin': '0', 'line-height': '1.6'},
+  ),
+  css('.interest-card').styles(
+    display: Display.flex,
+    raw: {'flex-direction': 'column', 'gap': '12px'},
+  ),
+  css('.interest-gallery').styles(
+    display: Display.grid,
+    gap: Gap.all(8.px),
+    raw: {'grid-template-columns': 'repeat(auto-fill, minmax(72px, 1fr))'},
+  ),
+  css('.interest-thumb').styles(
     raw: {
-      'margin': '0',
-      'line-height': '1.6',
+      'border-radius': '8px',
+      'overflow': 'hidden',
+      'aspect-ratio': '1',
+      'display': 'block',
     },
   ),
+  css('.interest-thumb img').styles(
+    raw: {
+      'width': '100%',
+      'height': '100%',
+      'object-fit': 'cover',
+      'display': 'block',
+      'transition': 'transform 0.2s ease',
+    },
+  ),
+  css('.interest-thumb:hover img').styles(raw: {'transform': 'scale(1.06)'}),
   css('.contact-grid').styles(
     display: Display.grid,
     gap: Gap.all(16.px),
-    raw: {
-      'grid-template-columns': 'repeat(auto-fill, minmax(200px, 1fr))',
-    },
+    raw: {'grid-template-columns': 'repeat(auto-fill, minmax(200px, 1fr))'},
   ),
   css('.contact-link').styles(
     display: Display.flex,
@@ -171,30 +167,21 @@ final pageStyles = <StyleRule>[
     textDecoration: TextDecoration.none,
     raw: {'margin-bottom': '24px'},
   ),
-  css('.back-link:hover').styles(
-    color: Color.variable('--accent'),
-  ),
-  css('.role').styles(
-    color: Color.variable('--accent'),
-    fontWeight: FontWeight.w600,
-  ),
-  css('.date-range').styles(
-    color: Color.variable('--on-surface-variant'),
-    fontSize: 0.9.rem,
-  ),
-  css('.case-study-section').styles(
-    raw: {'margin-bottom': '48px'},
-  ),
+  css('.back-link:hover').styles(color: Color.variable('--accent')),
+  css(
+    '.role',
+  ).styles(color: Color.variable('--accent'), fontWeight: FontWeight.w600),
+  css(
+    '.date-range',
+  ).styles(color: Color.variable('--on-surface-variant'), fontSize: 0.9.rem),
+  css('.case-study-section').styles(raw: {'margin-bottom': '48px'}),
   css('.case-study-section p').styles(
     color: Color.variable('--on-surface-variant'),
     raw: {'line-height': '1.8'},
   ),
   css('.case-study-section ul').styles(
     color: Color.variable('--on-surface-variant'),
-    raw: {
-      'line-height': '1.8',
-      'padding-left': '24px',
-    },
+    raw: {'line-height': '1.8', 'padding-left': '24px'},
   ),
   css('.back-nav').styles(
     padding: Padding.symmetric(vertical: 48.px, horizontal: 0.px),

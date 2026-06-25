@@ -5,17 +5,14 @@ import 'package:shared/shared.dart';
 import '../components/glass_card.dart';
 import '../components/icon_span.dart';
 import '../components/section_container.dart';
+import '../config.dart';
 
 class AboutPage extends StatelessComponent {
   const AboutPage({super.key});
 
   @override
   Component build(BuildContext context) {
-    return div([
-      _bioSection(),
-      _interestsSection(),
-      _contactSection(),
-    ]);
+    return div([_bioSection(), _interestsSection(), _contactSection()]);
   }
 
   Component _bioSection() {
@@ -27,9 +24,7 @@ class AboutPage extends StatelessComponent {
             p(classes: 'bio-paragraph', [Component.text(paragraph)]),
           p(classes: 'site-credits', [
             Component.text(siteCreditsPrefix),
-            a(href: siteCreditsLinkUrl, [
-              Component.text(siteCreditsLinkText),
-            ]),
+            a(href: siteCreditsLinkUrl, [Component.text(siteCreditsLinkText)]),
             Component.text('.'),
           ]),
         ]),
@@ -44,30 +39,35 @@ class AboutPage extends StatelessComponent {
         div(classes: 'interests-grid', [
           for (final interest in interests)
             GlassCard(
-              child: div(classes: 'interest-row', [
-                IconSpan(icon: interest.icon, size: 28),
-                div(classes: 'interest-content', [
-                  h3([Component.text(interest.title)]),
-                  if (interest.linkText != null && interest.linkUrl != null)
-                    p([
-                      Component.text(
-                        interest.description
-                            .split(interest.linkText!)
-                            .first,
-                      ),
-                      a(href: interest.linkUrl!, [
-                        Component.text(interest.linkText!),
-                      ]),
-                      Component.text(
-                        interest.description
-                            .split(interest.linkText!)
-                            .skip(1)
-                            .join(interest.linkText!),
-                      ),
-                    ])
-                  else
-                    p([Component.text(interest.description)]),
+              child: div(classes: 'interest-card', [
+                div(classes: 'interest-row', [
+                  IconSpan(icon: interest.icon, size: 28),
+                  div(classes: 'interest-content', [
+                    h3([Component.text(interest.title)]),
+                    if (interest.linkText != null && interest.linkUrl != null)
+                      p([
+                        Component.text(
+                          interest.description.split(interest.linkText!).first,
+                        ),
+                        a(href: interest.linkUrl!, [
+                          Component.text(interest.linkText!),
+                        ]),
+                        Component.text(
+                          interest.description
+                              .split(interest.linkText!)
+                              .skip(1)
+                              .join(interest.linkText!),
+                        ),
+                      ])
+                    else
+                      p([Component.text(interest.description)]),
+                  ]),
                 ]),
+                if (interest.images.isNotEmpty)
+                  _InterestGallery(
+                    images: interest.images,
+                    title: interest.title,
+                  ),
               ]),
             ),
         ]),
@@ -96,4 +96,37 @@ class AboutPage extends StatelessComponent {
       ]),
     );
   }
+}
+
+/// Thumbnail grid for an interest's photos. Each thumbnail links to the
+/// full-size image so it works without JavaScript (SSG-friendly).
+class _InterestGallery extends StatelessComponent {
+  const _InterestGallery({required this.images, required this.title});
+
+  final List<String> images;
+  final String title;
+
+  @override
+  Component build(BuildContext context) {
+    return div(classes: 'interest-gallery', [
+      for (final (index, path) in images.indexed)
+        a(
+          href: _webUrl(path),
+          target: Target.blank,
+          classes: 'interest-thumb',
+          [
+            img(
+              src: _webUrl(path),
+              alt: '$title photo ${index + 1}',
+              attributes: {'loading': 'lazy', 'decoding': 'async'},
+            ),
+          ],
+        ),
+    ]);
+  }
+
+  // Flutter asset path -> base-path-aware Jaspr web URL.
+  // 'assets/images/photography/x.webp' -> '$basePath/images/photography/x.webp'
+  String _webUrl(String assetPath) =>
+      '$basePath/${assetPath.replaceFirst('assets/', '')}';
 }
