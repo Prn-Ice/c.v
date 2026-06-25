@@ -41,7 +41,10 @@ jobs:
 
       # Build Jaspr site
       - name: Install Jaspr CLI
-        run: dart pub global activate jaspr_cli
+        # Pin to the 0.22.x line to match `jaspr: ^0.22.1` in portfolio_jaspr.
+        # An unpinned activate now pulls jaspr_cli 0.23.x, which refuses to
+        # build a 0.22 project ("use a minimum version constraint of 0.23.0").
+        run: dart pub global activate jaspr_cli "^0.22.0"
 
       - name: Get Jaspr dependencies
         working-directory: portfolio_jaspr
