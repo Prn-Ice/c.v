@@ -25,6 +25,7 @@ cd "$(dirname "$0")/.."
 DOCS="docs"
 SITE_CSS="$DOCS/resume_site_theme.css"
 VUE_CSS="$DOCS/resume_vue_theme.css"
+GENKI_CSS="$DOCS/resume_genki_theme.css"
 CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 PANDOC=(nix run nixpkgs#pandoc --)
 WORK="$(mktemp -d)"
@@ -36,6 +37,7 @@ VARIANTS=(
   "resume_v3_second_pass_workflow_ats|Prince Nna - Senior Full Stack Engineer"
   "resume_v3_flutter_mobile_targeted|Prince Nna - Senior Flutter Engineer"
   "resume_v3_frontend_vue_profile|Prince Nna - Senior Frontend Engineer"
+  "resume_v3_genki_mid_backend|Prince Nna - Full-Stack Software Engineer"
 )
 
 render_html() { # md css title out
@@ -80,8 +82,15 @@ for entry in "${VARIANTS[@]}"; do
   md="$DOCS/$name.md"
   [ -f "$md" ] || { echo "skip $name (no $md)"; continue; }
   echo "$name"
-  render_html "$md" "$SITE_CSS" "$title" "$DOCS/${name}_site_theme.html"
-  render_pdf  "$DOCS/${name}_site_theme.html" "$DOCS/${name}_site_theme.pdf"
+  primary_css="$SITE_CSS"
+  primary_theme="site_theme"
+  if [ "$name" = "resume_v3_genki_mid_backend" ]; then
+    primary_css="$GENKI_CSS"
+    primary_theme="genki_theme"
+  fi
+
+  render_html "$md" "$primary_css" "$title" "$DOCS/${name}_${primary_theme}.html"
+  render_pdf  "$DOCS/${name}_${primary_theme}.html" "$DOCS/${name}_${primary_theme}.pdf"
   render_docx "$md" "$DOCS/$name.docx"
   # frontend variant also ships a vue-themed HTML + PDF
   if [ "$name" = "resume_v3_frontend_vue_profile" ]; then

@@ -23,7 +23,7 @@ Work history is expressed through case studies (each carries a `role` +
 
 ### 2. Résumé variants — `docs/resume_v3_*`  (gitignored — local only)
 
-Four role-targeted résumés, each authored as Markdown and rendered to themed
+Five role-targeted résumés, each authored as Markdown and rendered to themed
 HTML / PDF / DOCX:
 
 | Variant | Target |
@@ -32,6 +32,7 @@ HTML / PDF / DOCX:
 | `resume_v3_second_pass_workflow_ats` | Full-stack (ATS, refined) |
 | `resume_v3_flutter_mobile_targeted` | Flutter / mobile roles |
 | `resume_v3_frontend_vue_profile` | Frontend / Vue roles |
+| `resume_v3_genki_mid_backend` | Genki mid-level backend role (full-stack identity, backend-relevant evidence) |
 
 `docs/` is **gitignored**: these résumés carry full contact PII (phone number,
 city) that the public résumé site (`index.html`) deliberately omits. They are
@@ -52,6 +53,10 @@ docs/<name>_site_theme.html ──Chrome print-to-PDF──▶ docs/<name>_site_
   --metadata title="…"`. `--embed-resources` inlines the theme CSS so the file
   is self-contained. The frontend variant also renders a `_vue_theme` HTML using
   `docs/resume_vue_theme.css`.
+- **Genki theme** — the Genki variant uses `docs/resume_genki_theme.css` as its
+  primary theme and renders `_genki_theme.html` / `_genki_theme.pdf` outputs.
+  Its content remains single-column and ATS-safe; the separate theme only
+  changes visual hierarchy and colour.
 - **PDF** — printed from the themed HTML by **headless Google Chrome**
   (`--headless=new --print-to-pdf`), the same engine that produced the originals
   (their metadata reads `Producer: Skia/PDF`, `Creator: Chrome`). Gotcha:
