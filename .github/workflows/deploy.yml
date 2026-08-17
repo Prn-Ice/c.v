@@ -21,9 +21,11 @@ jobs:
 
       - uses: subosito/flutter-action@v2
         with:
-          channel: stable
+          flutter-version: 3.47.0
 
       - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: 3.13.0
 
       # Shared package
       - name: Get shared dependencies
@@ -40,21 +42,15 @@ jobs:
         run: flutter build web --wasm --base-href /
 
       # Build Jaspr site
-      - name: Install Jaspr CLI
-        # Pin to the 0.22.x line to match `jaspr: ^0.22.1` in portfolio_jaspr.
-        # An unpinned activate now pulls jaspr_cli 0.23.x, which refuses to
-        # build a 0.22 project ("use a minimum version constraint of 0.23.0").
-        run: dart pub global activate jaspr_cli "^0.22.0"
-
       - name: Get Jaspr dependencies
         working-directory: portfolio_jaspr
-        run: dart pub get
+        run: dart pub get --enforce-lockfile
 
       - name: Build Jaspr (SSG)
         working-directory: portfolio_jaspr
         env:
           BASE_PATH: /jaspr
-        run: dart pub global run jaspr_cli:jaspr build
+        run: dart run jaspr_cli:jaspr build
 
       # Merge outputs
       - name: Merge Jaspr into Flutter build
