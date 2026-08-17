@@ -39,7 +39,7 @@ class HomePage extends StatelessComponent {
             [Component.text('LinkedIn')],
           ),
           a(
-            href: 'mailto:stormprince77@gmail.com',
+            href: 'mailto:princenna@proton.me',
             classes: 'btn btn-outlined',
             [Component.text('Contact')],
           ),

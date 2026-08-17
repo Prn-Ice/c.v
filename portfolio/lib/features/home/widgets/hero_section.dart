@@ -89,7 +89,7 @@ class _HeroCtas extends StatelessWidget {
       ),
       OutlinedButton(
         onPressed: () => launchUrl(
-          Uri.parse('mailto:stormprince77@gmail.com'),
+          Uri.parse('mailto:princenna@proton.me'),
         ),
         child: const Text('Contact'),
       ),
