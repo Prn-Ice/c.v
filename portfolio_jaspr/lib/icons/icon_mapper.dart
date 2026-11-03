@@ -1,6 +1,6 @@
 import 'package:shared/shared.dart';
 
-/// Maps [AppIcon] to Material Icons Outlined web font ligature names.
+/// Maps [AppIcon] to bundled Material Icons Outlined SVG symbol IDs.
 String mapIconName(AppIcon icon) {
   return switch (icon) {
     AppIcon.code => 'code',
@@ -19,5 +19,6 @@ String mapIconName(AppIcon icon) {
     AppIcon.close => 'close',
     AppIcon.lightMode => 'light_mode',
     AppIcon.darkMode => 'dark_mode',
+    AppIcon.openInNew => 'open_in_new',
   };
 }

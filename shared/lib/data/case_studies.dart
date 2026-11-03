@@ -1,16 +1,95 @@
 import '../models/case_study.dart';
 
 const caseStudies = [
-  // -- 0. findaphone.ng (featured, current) --
+  // -- Expert Listing (featured, current employment) --
+  CaseStudy(
+    slug: 'expert-listing',
+    title: 'Expert Listing',
+    subtitle: 'A Shared Dart Core for Mobile and Web',
+    summary:
+        'Lead mobile development and rebuilt the Flutter app and Dart/Jaspr '
+        'website around shared API and application-state packages. Took the '
+        'mobile rebuild from its first commit to a store release in 24 days, '
+        'while helping hire and establish the engineering team.',
+    tags: ['Flutter', 'Jaspr', 'Riverpod', 'Django REST', 'Team Leadership'],
+    dateRange: 'Sep 2026 – Present',
+    role: 'Mobile Developer @ Expert Listing',
+    gridSpan: 2,
+    links: [
+      CaseStudyLink(
+        label: 'Dart web rewrite',
+        url:
+            'https://ex-c4a7774adafe48d88f9a8764de7c677b.ecs.us-east-1.on.aws/',
+      ),
+      CaseStudyLink(
+        label: 'Google Play',
+        url:
+            'https://play.google.com/store/apps/details?id=ng.expertlisting.expertlisting&hl=en',
+      ),
+      CaseStudyLink(
+        label: 'App Store',
+        url: 'https://apps.apple.com/us/app/expert-listing/id6766226080',
+      ),
+    ],
+    sections: [
+      CaseStudySection(
+        title: 'Challenge',
+        content:
+            'Rebuild the mobile experience against an existing Django REST '
+            'backend and bring the website into the same Dart ecosystem, '
+            'without duplicating API contracts and product behaviour across '
+            'two clients. Public property pages also needed crawlable HTML '
+            'and search metadata, not just a client-rendered interface.',
+      ),
+      CaseStudySection(
+        title: 'Architecture',
+        content:
+            'Kept API models, repositories, and Riverpod providers in pure-Dart '
+            'packages consumed by Flutter and Jaspr. Each host supplies its '
+            'own networking, authentication storage, and media capabilities. '
+            'The website renders public pages on the server and hydrates '
+            'interactive islands; browser sessions use HttpOnly cookies.',
+        bulletPoints: [
+          'Property search, listing detail, profiles, and account workflows',
+          'Feed, stories, video preparation, messaging, and notification '
+              'work behind backend feature flags',
+          'Server-rendered first reads with shared state for browser hydration',
+          'SEO comparison tooling for metadata, structured data, and links '
+              'during the website migration',
+        ],
+      ),
+      CaseStudySection(
+        title: 'Team & Delivery',
+        content:
+            'Lead the mobile development team and worked with the business '
+            'to interview and hire an additional mobile developer and a '
+            'backend developer. Established developer documentation, Beads '
+            'tracking, repository rules, and release workflows, with Patrol '
+            'mobile journeys and Playwright web journeys.',
+      ),
+      CaseStudySection(
+        title: 'Impact',
+        content:
+            'The mobile repository started on 11 September 2026 and v2.0 '
+            'reached the stores on 5 October: 24 days from the first commit. '
+            'Continued improving media, slow-network behaviour, shared '
+            'state, and deployment review. Also contributed Django API '
+            'fixes and admin improvements alongside the client rebuilds; '
+            'feature availability remains controlled by each backend environment.',
+      ),
+    ],
+  ),
+
+  // -- findaphone.ng (featured, independent product) --
   CaseStudy(
     slug: 'findaphone',
     title: 'findaphone.ng',
     subtitle: 'A Phone-Buying Platform for Nigeria',
     summary:
-        'Founded and solely built a live phone-buying platform for the '
-        'Nigerian market. A single-developer Dart monorepo spanning a Jaspr '
-        'web app, a dart_frog API, a pure-Dart scraper, and Supabase Postgres, '
-        'live in production at findaphone.ng.',
+        'Founded and built a live phone-buying platform for Nigeria, from '
+        'recommendations and marketplace matching to reviewed community OS '
+        'support and NCC model-approval evidence. One Dart monorepo spans '
+        'the Jaspr website, dart_frog API, scrapers, and Supabase Postgres.',
     tags: ['Dart', 'Jaspr', 'dart_frog', 'Supabase', 'Melos', 'Founder'],
     dateRange: 'Apr 2026 – Present',
     role: 'Library Curator @ findaphone.ng',
@@ -53,14 +132,139 @@ const caseStudies = [
         ],
       ),
       CaseStudySection(
+        title: 'Evidence-Led Discovery',
+        content:
+            'Extended the catalogue beyond specifications and prices with '
+            'reviewed community OS support and an NCC registry browser. '
+            'Official-source adapters produce candidates for human review, '
+            'not automatic approval. Exact model variants, support status, '
+            'and source evidence remain attached to published records.',
+        bulletPoints: [
+          'Community OS discovery published with reviewed support records '
+              'across 566 phone families',
+          'NCC registry browsing distinguishes exact model Type Approval '
+              'from verification of an individual device',
+          'Immutable Supabase evidence snapshots and repeatable publication '
+              'tools preserve review decisions and provenance',
+        ],
+      ),
+      CaseStudySection(
         title: 'Impact',
         content:
             'Live in production on Cloudflare Pages, Railway, and Supabase with '
-            'continuous deployment. A pure-function recommendation engine '
-            '(eight-category scoring across five entry paths) returns results '
-            'in sub-milliseconds, guarded by a layered test suite (unit, '
-            'integration, schema-contract, end-to-end) behind a build-time '
-            'analyze gate.',
+            'continuous deployment. Shared pure-Dart recommendation logic '
+            'supports budget and preference-led discovery, guarded by unit, '
+            'integration, schema-contract, and end-to-end tests. Recent work '
+            'also covers server-component boundaries, session continuity, '
+            'search indexability, and data-backed sitemap metadata.',
+      ),
+    ],
+  ),
+
+  // -- Lagos Landlord (Expert Listing game experiment) --
+  CaseStudy(
+    slug: 'lagos-landlord',
+    title: 'Lagos Landlord',
+    subtitle: 'A Playable Lagos in the Browser',
+    summary:
+        'Built a browser-based Lagos game experiment with walkable streets, '
+        'keke driving, interactive characters, and multiplayer presence. '
+        'Kept the Three.js world separate from its React interface and '
+        'server-owned game economy.',
+    tags: ['Three.js', 'Next.js', 'TypeScript', 'Rapier', 'Firebase'],
+    dateRange: 'Oct 2026',
+    role: 'Developer @ Expert Listing',
+    links: [
+      CaseStudyLink(
+        label: 'Play Lagos Landlord',
+        url: 'https://lagos-landlord.vercel.app/play?ink=1',
+      ),
+    ],
+    sections: [
+      CaseStudySection(
+        title: 'Challenge',
+        content:
+            'Make an explorable Lagos neighbourhood accessible from a browser '
+            'link, with no install or sign-up before play. The experiment '
+            'needed to balance a lively 3D world, mobile controls, persistent '
+            'progress, and interactions with other players.',
+      ),
+      CaseStudySection(
+        title: 'Approach',
+        content:
+            'Separated the Next.js interface from a Three.js renderer through '
+            'a typed world contract. Rapier physics runs in a Web Worker, '
+            'while React stays out of the per-frame simulation. District '
+            'layouts are data-driven, with quality tiers for different devices.',
+      ),
+      CaseStudySection(
+        title: 'World & Persistence',
+        content:
+            'Built street exploration, driving, character interactions, and '
+            'shareable moments. Firebase supports accounts, saved progress, '
+            'and multiplayer presence; Cloud Functions decide earnings '
+            'rather than trusting the browser. Playwright journeys cover '
+            'player flows against Firebase emulators.',
+      ),
+      CaseStudySection(
+        title: 'Outcome',
+        content:
+            'A publicly playable experiment extending my work beyond '
+            'application interfaces into real-time graphics, simulation, '
+            'and multiplayer state. The linked demo is the Three.js version.',
+      ),
+    ],
+  ),
+
+  // -- Beads Viewer (independent open-source tooling) --
+  CaseStudy(
+    slug: 'beads-viewer',
+    title: 'Beads Viewer',
+    subtitle: 'A Live Dashboard for Local Issue Trackers',
+    summary:
+        'Built an independent Next.js dashboard for Beads, distributed as '
+        'view-beads on npm. Discover local projects, follow issue updates '
+        'in the browser, and share a live board through a Cloudflare tunnel.',
+    tags: ['Next.js', 'TypeScript', 'Developer Tooling', 'Open Source'],
+    repoUrl: 'https://github.com/Prn-Ice/beads-viewer',
+    links: [
+      CaseStudyLink(
+        label: 'view-beads on npm',
+        url: 'https://www.npmjs.com/package/view-beads',
+      ),
+    ],
+    sections: [
+      CaseStudySection(
+        title: 'Challenge',
+        content:
+            'Beads tracks work close to the code, but a terminal is not '
+            'always the best place to scan multiple projects or show progress '
+            'to a teammate. I wanted a browser view that works with the '
+            'existing tracker instead of creating another source of truth.',
+      ),
+      CaseStudySection(
+        title: 'Approach',
+        content:
+            'Built a Next.js interface with shadcn/ui and Tailwind, backed '
+            'by thin routes over the Beads CLI. Project discovery separates '
+            'repositories from linked worktrees; optional GitHub mirrors '
+            'read checked-in issue exports without pushing changes back.',
+      ),
+      CaseStudySection(
+        title: 'Live Updates & Sharing',
+        content:
+            'Follow the Beads event journal and push updates to open boards, '
+            'with polling when streams are unavailable. Server-mode projects '
+            'can use the bd serve HTTP API instead of starting a CLI process '
+            'for each read. Cloudflare tunnels let teammates view a board '
+            'without installing the tool.',
+      ),
+      CaseStudySection(
+        title: 'Delivery',
+        content:
+            'Packaged the standalone server as the view-beads npm CLI, with '
+            'Nix support and Vitest/Playwright test workflows. Independent '
+            'open-source tooling, not an official Beads product.',
       ),
     ],
   ),
@@ -112,9 +316,10 @@ const caseStudies = [
         title: 'Impact',
         content:
             'Became the team\'s Flutter reference after VGV departure. '
-            'Achieved a 25\u00d7 test speed improvement (75 s \u2192 3 s) by optimizing '
-            'widget selectors. Contributed to 525+ merged PRs across 9 repos '
-            'and 99 production releases.',
+            'Reduced a specific widget-test feedback loop from 75 s to '
+            'under 3 s by optimizing selectors. Contributed 525+ PRs across '
+            '9 repos, with completed work associated with 99 distinct Jira '
+            'release-version tags.',
       ),
     ],
   ),
@@ -304,7 +509,7 @@ const caseStudies = [
       CaseStudySection(
         title: 'Impact',
         content:
-            '7 stars on GitHub. Published on brickhub.dev. Defines "how '
+            'Published on brickhub.dev. Defines "how '
             'apps should be built" \u2014 not just building apps.',
       ),
     ],
@@ -316,8 +521,9 @@ const caseStudies = [
     title: 'LenovoLegionLinuxFrontend',
     subtitle: 'Flutter Desktop for Linux Hardware',
     summary:
-        'Flutter desktop frontend for Lenovo Legion Linux fan control '
-        'and power management tools.',
+        'Flutter desktop frontend for Lenovo Legion Linux: fan curves, '
+        'power profiles, battery controls, GPU monitoring, and a live '
+        'dashboard, with a typed service boundary for privileged operations.',
     tags: ['Flutter', 'Linux', 'Desktop', 'Hardware'],
     repoUrl: 'https://github.com/Prn-Ice/LenovoLegionLinuxFrontend',
     sections: [
@@ -332,16 +538,17 @@ const caseStudies = [
         title: 'Approach',
         content:
             'Built a Flutter desktop application providing visual controls '
-            'for fan curves, power profiles, and thermal management. '
-            'Feature-first architecture with RiverBloc state management, '
-            'matching production-grade patterns.',
+            'for fan curves, power profiles, battery settings, and a live '
+            'system dashboard. Read-only telemetry stays separate from '
+            'privileged operations exposed through a typed D-Bus service.',
       ),
       CaseStudySection(
         title: 'Technical Stack',
         content:
-            'Flutter desktop (Linux), RiverBloc (Riverpod + Bloc), '
-            'system-level D-Bus integration for hardware communication, '
-            'feature-first directory structure.',
+            'Flutter desktop on Linux, D-Bus for system integration, and '
+            'Polkit authorization for privileged actions. The service uses '
+            'an operation allow-list and fixed command arguments rather '
+            'than shell execution.',
       ),
       CaseStudySection(
         title: 'Impact',

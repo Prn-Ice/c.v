@@ -3,11 +3,22 @@ import '../models/skill_category.dart';
 const skillCategories = [
   SkillCategory(
     name: 'Languages',
-    skills: ['Dart', 'TypeScript', 'JavaScript', 'HTML/CSS', 'Nix'],
+    skills: ['Dart', 'TypeScript', 'JavaScript', 'Python', 'HTML/CSS', 'Nix'],
   ),
   SkillCategory(
     name: 'Frameworks',
-    skills: ['Flutter', 'React', 'Next.js', 'NestJS', 'Handlebars'],
+    skills: [
+      'Flutter',
+      'Jaspr',
+      'React',
+      'Next.js',
+      'Django REST Framework',
+      'dart_frog',
+      'Hono',
+      'NestJS',
+      'Three.js',
+      'Handlebars',
+    ],
   ),
   SkillCategory(
     name: 'State & Data',
@@ -18,24 +29,27 @@ const skillCategories = [
       'React Query',
       'GraphQL',
       'Redux',
+      'PostgreSQL',
+      'Supabase',
+      'Firebase',
     ],
   ),
   SkillCategory(
     name: 'Infrastructure',
-    skills: [
-      'NixOS',
-      'Nix Flakes',
-      'Docker',
-      'GitHub Actions',
-      'Codemagic',
-    ],
+    skills: ['NixOS', 'Nix Flakes', 'Docker', 'GitHub Actions', 'Codemagic'],
   ),
   SkillCategory(
     name: 'Testing',
-    skills: ['Unit/Widget Testing', 'Cypress', 'Playwright'],
+    skills: [
+      'Unit/Widget Testing',
+      'Patrol',
+      'Cypress',
+      'Playwright',
+      'Vitest',
+    ],
   ),
   SkillCategory(
     name: 'Tooling',
-    skills: ['Mason', 'Melos', 'Datadog', 'Google Analytics (GA4)'],
+    skills: ['Mason', 'Melos', 'Beads', 'Datadog', 'Google Analytics (GA4)'],
   ),
 ];

@@ -1,5 +1,5 @@
 /// Framework-agnostic icon identifiers.
-/// Flutter maps these to [IconData], Jaspr maps to Material Icons web font ligatures.
+/// Flutter maps these to [IconData], Jaspr to bundled SVG symbols.
 enum AppIcon {
   code,
   search,
@@ -17,4 +17,5 @@ enum AppIcon {
   close,
   lightMode,
   darkMode,
+  openInNew,
 }

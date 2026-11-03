@@ -8,9 +8,8 @@ final pageStyles = <StyleRule>[
     textAlign: TextAlign.center,
     raw: {'padding-bottom': '48px'},
   ),
-  css(
-    '.hero-subtitle',
-  ).styles(color: Color.variable('--accent'), fontWeight: FontWeight.w600),
+  css('.hero-subtitle')
+      .styles(color: Color.variable('--accent'), fontWeight: FontWeight.w600),
   css('.hero-summary').styles(
     maxWidth: 600.px,
     margin: Margin.symmetric(horizontal: Unit.auto),
@@ -36,17 +35,15 @@ final pageStyles = <StyleRule>[
     fontSize: 0.95.rem,
     raw: {'transition': 'all 0.2s'},
   ),
-  css(
-    '.btn-filled',
-  ).styles(raw: {'background': 'var(--accent)', 'color': 'white'}),
+  css('.btn-filled')
+      .styles(raw: {'background': 'var(--accent)', 'color': 'white'}),
   css('.btn-filled:hover').styles(raw: {'background': 'var(--accent-light)'}),
   css('.btn-outlined').styles(
     color: Color.variable('--on-surface'),
     raw: {'border': '1px solid var(--glass-border)'},
   ),
-  css(
-    '.btn-outlined:hover',
-  ).styles(raw: {'background': 'var(--surface-container-high)'}),
+  css('.btn-outlined:hover')
+      .styles(raw: {'background': 'var(--surface-container-high)'}),
 
   // ── Bento grid ────────────────────────────────────────────
   css('.bento-grid').styles(
@@ -69,6 +66,8 @@ final pageStyles = <StyleRule>[
   ),
 
   // ── Card link ─────────────────────────────────────────────
+  css('.card-link h3, .case-study-hero h1')
+      .styles(raw: {'overflow-wrap': 'anywhere'}),
   css('.card-link').styles(
     textDecoration: TextDecoration.none,
     color: Color.inherit,
@@ -168,12 +167,10 @@ final pageStyles = <StyleRule>[
     raw: {'margin-bottom': '24px'},
   ),
   css('.back-link:hover').styles(color: Color.variable('--accent')),
-  css(
-    '.role',
-  ).styles(color: Color.variable('--accent'), fontWeight: FontWeight.w600),
-  css(
-    '.date-range',
-  ).styles(color: Color.variable('--on-surface-variant'), fontSize: 0.9.rem),
+  css('.role')
+      .styles(color: Color.variable('--accent'), fontWeight: FontWeight.w600),
+  css('.date-range')
+      .styles(color: Color.variable('--on-surface-variant'), fontSize: 0.9.rem),
   css('.case-study-section').styles(raw: {'margin-bottom': '48px'}),
   css('.case-study-section p').styles(
     color: Color.variable('--on-surface-variant'),

@@ -14,9 +14,15 @@ class Footer extends StatelessComponent {
         span([Component.text('Built with Jaspr')]),
         div(classes: 'footer-icons', [
           for (final link in socialLinks)
-            a(href: link.url, target: Target.blank, [
-              IconSpan(icon: link.icon, size: 20),
-            ]),
+            a(
+              href: link.url,
+              target: Target.blank,
+              attributes: {
+                'aria-label': link.label,
+                'rel': 'noopener noreferrer',
+              },
+              [IconSpan(icon: link.icon, size: 20)],
+            ),
         ]),
       ]),
     ]);

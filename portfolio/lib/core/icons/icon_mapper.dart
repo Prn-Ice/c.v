@@ -19,5 +19,6 @@ IconData mapIcon(AppIcon icon) {
     AppIcon.close => Icons.close_rounded,
     AppIcon.lightMode => Icons.light_mode,
     AppIcon.darkMode => Icons.dark_mode,
+    AppIcon.openInNew => Icons.open_in_new,
   };
 }

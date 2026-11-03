@@ -3,20 +3,23 @@ description: "Prince Nna's portfolio site — Jaspr SSG version"
 publish_to: 'none'
 
 environment:
-  sdk: ^3.10.0
+  sdk: ^3.13.0
 
 dependencies:
-  jaspr: ^0.23.4
-  jaspr_router: ^0.9.0
+  # Keep the beta runtime, router, and build tools on the same release family.
+  jaspr: 0.24.0-beta.0
+  jaspr_router: 0.10.0-beta.0
   shared:
     path: ../shared
 
 dev_dependencies:
-  build_runner: ^2.4.0
-  build_web_compilers: ^4.4.6
-  jaspr_builder: ^0.23.4
-  jaspr_cli: 0.23.4
-  jaspr_lints: ^0.7.2
+  build_runner: ^2.16.1
+  build_web_compilers: 4.8.12
+  html: ^0.15.6
+  jaspr_builder: 0.24.0-beta.0
+  jaspr_cli: 0.24.0-beta.0
+  jaspr_lints: 0.8.0-beta.0
+  test: ^1.31.1
 
 jaspr:
   mode: static

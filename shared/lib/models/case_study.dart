@@ -8,6 +8,7 @@ class CaseStudy {
     required this.sections,
     this.repoUrl,
     this.liveUrl,
+    this.links = const [],
     this.dateRange,
     this.role,
     this.gridSpan = 1,
@@ -21,9 +22,24 @@ class CaseStudy {
   final List<CaseStudySection> sections;
   final String? repoUrl;
   final String? liveUrl;
+  final List<CaseStudyLink> links;
   final String? dateRange;
   final String? role;
   final int gridSpan;
+
+  List<CaseStudyLink> get externalLinks => [
+    if (liveUrl != null)
+      CaseStudyLink(label: 'View live project', url: liveUrl!),
+    if (repoUrl != null) CaseStudyLink(label: 'View on GitHub', url: repoUrl!),
+    ...links,
+  ];
+}
+
+class CaseStudyLink {
+  const CaseStudyLink({required this.label, required this.url});
+
+  final String label;
+  final String url;
 }
 
 class CaseStudySection {

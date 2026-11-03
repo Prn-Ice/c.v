@@ -54,13 +54,20 @@ class CaseStudyPage extends StatelessWidget {
                         duration: 400.ms,
                         curve: Curves.easeOut,
                       ),
-                if (study.repoUrl != null)
+                if (study.externalLinks.isNotEmpty)
                   Padding(
                     padding: const EdgeInsets.only(bottom: 32),
-                    child: OutlinedButton.icon(
-                      onPressed: () => launchUrl(Uri.parse(study.repoUrl!)),
-                      icon: const Icon(Icons.code),
-                      label: const Text('View on GitHub'),
+                    child: Wrap(
+                      spacing: 12,
+                      runSpacing: 12,
+                      children: [
+                        for (final link in study.externalLinks)
+                          OutlinedButton.icon(
+                            onPressed: () => launchUrl(Uri.parse(link.url)),
+                            icon: const Icon(Icons.open_in_new),
+                            label: Text(link.label),
+                          ),
+                      ],
                     ),
                   ),
                 Center(

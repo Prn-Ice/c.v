@@ -15,27 +15,16 @@ final typographyStyles = [
       '-moz-osx-font-smoothing': 'grayscale',
     },
   ),
-  css('h1').styles(
-    fontSize: 3.5.rem,
-    fontWeight: FontWeight.w700,
-    lineHeight: 1.2.em,
-  ),
-  css('h2').styles(
-    fontSize: 2.rem,
-    fontWeight: FontWeight.w700,
-    lineHeight: 1.3.em,
-  ),
-  css('h3').styles(
-    fontSize: 1.5.rem,
-    fontWeight: FontWeight.w600,
-    lineHeight: 1.4.em,
-  ),
-  css('code, pre').styles(
-    fontFamily: FontFamily.list([
-      FontFamily('JetBrains Mono'),
-      FontFamilies.monospace,
-    ]),
-  ),
+  css(
+    'h1',
+  ).styles(fontSize: 3.5.rem, fontWeight: FontWeight.w700, lineHeight: 1.2.em),
+  css('h2')
+      .styles(fontSize: 2.rem, fontWeight: FontWeight.w700, lineHeight: 1.3.em),
+  css(
+    'h3',
+  ).styles(fontSize: 1.5.rem, fontWeight: FontWeight.w600, lineHeight: 1.4.em),
+  css('code, pre')
+      .styles(fontFamily: FontFamily.list([FontFamilies.monospace])),
   css('a').styles(
     color: Color.variable('--accent'),
     textDecoration: TextDecoration.none,

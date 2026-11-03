@@ -50,7 +50,15 @@ jobs:
         working-directory: portfolio_jaspr
         env:
           BASE_PATH: /jaspr
-        run: dart run jaspr_cli:jaspr build
+        run: |
+          dart run tool/generate_sitemap.dart
+          dart run jaspr_cli:jaspr build
+
+      - name: Check Jaspr analysis and server-rendered pages
+        working-directory: portfolio_jaspr
+        run: |
+          dart analyze --fatal-infos
+          dart test
 
       # Merge outputs
       - name: Merge Jaspr into Flutter build

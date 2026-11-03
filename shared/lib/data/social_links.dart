@@ -14,7 +14,7 @@ const socialLinks = [
   ),
   SocialLink(
     label: 'Email',
-    url: 'mailto:stormprince77@gmail.com',
+    url: 'mailto:princenna@proton.me',
     icon: AppIcon.email,
   ),
 ];

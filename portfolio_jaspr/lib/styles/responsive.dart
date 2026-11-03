@@ -10,13 +10,16 @@ final responsiveStyles = <StyleRule>[
     ),
   ]),
 
-  // Small tablet: max-width 600px — single column grid
+  // A featured card must not create a second column below the two-card width.
+  css.media(MediaQuery.all(maxWidth: 768.px), [
+    css('.bento-grid').styles(raw: {'grid-template-columns': 'minmax(0, 1fr)'}),
+    css('.bento-cell.span-2').styles(raw: {'grid-column': 'auto'}),
+  ]),
+
+  // Small tablet: max-width 600px — single column grids
   css.media(MediaQuery.all(maxWidth: 600.px), [
-    css('.grid').styles(
-      gridTemplate: GridTemplate(
-        columns: GridTracks([GridTrack(TrackSize.fr(1))]),
-      ),
-    ),
+    css('.skills-grid, .interests-grid, .contact-grid')
+        .styles(raw: {'grid-template-columns': 'minmax(0, 1fr)'}),
     css('section').styles(
       padding: Padding.symmetric(vertical: 24.px, horizontal: 16.px),
     ),

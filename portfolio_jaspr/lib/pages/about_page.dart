@@ -4,6 +4,7 @@ import 'package:shared/shared.dart';
 
 import '../components/glass_card.dart';
 import '../components/icon_span.dart';
+import '../components/page_head.dart';
 import '../components/section_container.dart';
 import '../config.dart';
 
@@ -12,7 +13,16 @@ class AboutPage extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    return div([_bioSection(), _interestsSection(), _contactSection()]);
+    return div([
+      const PageHead(
+        title: 'About Prince Nna | Dart, Jaspr & Flutter Developer',
+        description: 'Meet Prince Nna, a full stack engineer building Flutter apps, Jaspr websites, and open-source tools. Read about his background and interests.',
+        path: '/about',
+      ),
+      _bioSection(),
+      _interestsSection(),
+      _contactSection(),
+    ]);
   }
 
   Component _bioSection() {

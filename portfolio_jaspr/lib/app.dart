@@ -9,6 +9,8 @@ import 'components/nav_bar.dart';
 import 'pages/about_page.dart';
 import 'pages/case_study_page.dart';
 import 'pages/home_page.dart';
+import 'pages/jaspr_development_page.dart';
+import 'seo.dart';
 
 export 'styles/app_styles.dart' show appStyles;
 
@@ -19,21 +21,21 @@ class App extends StatelessComponent {
   Component build(BuildContext context) {
     return div(classes: 'app-shell', [
       const NavBar(),
-      Router(routes: [
-        Route(
-          path: '/',
-          builder: (context, state) => const HomePage(),
-        ),
-        Route(
-          path: '/about',
-          builder: (context, state) => const AboutPage(),
-        ),
-        for (final study in caseStudies)
+      Router(
+        routes: [
+          Route(path: '/', builder: (context, state) => const HomePage()),
+          Route(path: '/about', builder: (context, state) => const AboutPage()),
           Route(
-            path: '/case-study/${study.slug}',
-            builder: (context, state) => CaseStudyPage(slug: study.slug),
+            path: jasprDevelopmentPath,
+            builder: (context, state) => const JasprDevelopmentPage(),
           ),
-      ]),
+          for (final study in caseStudies)
+            Route(
+              path: '/case-study/${study.slug}',
+              builder: (context, state) => CaseStudyPage(slug: study.slug),
+            ),
+        ],
+      ),
       const CrossRefBanner(),
       const Footer(),
     ]);

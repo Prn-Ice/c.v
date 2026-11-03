@@ -3,10 +3,12 @@
 /// The [main] method will only be executed on the server during pre-rendering.
 library;
 
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/server.dart';
+import 'package:shared/shared.dart';
 
 import 'app.dart';
 import 'config.dart';
@@ -19,72 +21,69 @@ void main() {
 
   basePath = Platform.environment['BASE_PATH'] ?? '';
 
-  runApp(
-    Document(
-      title: 'Prince Nna | Senior Full Stack Engineer',
-      lang: 'en',
-      base: basePath.isNotEmpty ? basePath : null,
-      charset: 'utf-8',
-      viewport: 'width=device-width, initial-scale=1.0',
-      meta: {
-        'description':
-            'Senior Full Stack Engineer specializing in Flutter, React, '
-            'and cross-platform development',
-        'og:title': 'Prince Nna | Senior Full Stack Engineer',
-        'og:description':
-            'Senior Full Stack Engineer specializing in Flutter, React, '
-            'and cross-platform development',
-        'og:type': 'website',
-        'og:url': 'https://portfolio.prnice.me/jaspr',
-      },
-      head: [
-        link(rel: 'icon', type: 'image/svg+xml', href: '$basePath/favicon.svg'),
-        link(
-          rel: 'stylesheet',
-          href:
-              'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap',
-        ),
-        link(
-          rel: 'stylesheet',
-          href:
-              'https://fonts.googleapis.com/icon?family=Material+Icons+Outlined',
-        ),
-        script(
-          attributes: {'type': 'application/ld+json'},
-          content: '''
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Prince Nna",
-  "jobTitle": "Senior Full Stack Engineer",
-  "url": "https://portfolio.prnice.me/jaspr",
-  "sameAs": [
-    "https://github.com/Prn-Ice",
-    "https://linkedin.com/in/princenna",
-    "https://www.youtube.com/@prn-ice"
-  ]
+  runApp(buildDocument());
 }
-''',
-        ),
-        script(
-          defer: true,
-          content: '''
-const toggle = document.getElementById('theme-toggle');
+
+Document buildDocument() => Document(
+  title: siteTitle,
+  lang: 'en',
+  base: basePath.isNotEmpty ? basePath : null,
+  charset: 'utf-8',
+  viewport: 'width=device-width, initial-scale=1.0',
+  head: [
+    link(rel: 'icon', type: 'image/svg+xml', href: '$basePath/favicon.svg'),
+    link(
+      rel: 'preload',
+      href: '$basePath/fonts/plus-jakarta-sans-latin-wght.woff2',
+      attributes: {'as': 'font', 'type': 'font/woff2', 'crossorigin': ''},
+    ),
+    link(rel: 'stylesheet', href: '$basePath/fonts.css'),
+    script(
+      attributes: {'type': 'application/ld+json'},
+      content: jsonEncode({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        '@id': '$jasprSiteUrl/#person',
+        'name': 'Prince Nna',
+        'jobTitle': 'Senior Full Stack Engineer',
+        'url': '$jasprSiteUrl/',
+        'knowsAbout': [
+          'Dart',
+          'Jaspr',
+          'Flutter',
+          'Server-side rendering',
+          'Static site generation',
+        ],
+        'sameAs': [
+          for (final social in socialLinks)
+            if (social.url.startsWith('https://')) social.url,
+        ],
+      }),
+    ),
+    script(
+      content: '''
 const html = document.documentElement;
-const stored = localStorage.getItem('theme');
-if (stored) html.setAttribute('data-theme', stored);
-toggle?.addEventListener('click', () => {
-  const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-  html.setAttribute('data-theme', next);
-  localStorage.setItem('theme', next);
-  toggle.querySelector('span').textContent =
-    next === 'light' ? 'light_mode' : 'dark_mode';
+try {
+  const stored = localStorage.getItem('theme');
+  if (stored === 'light' || stored === 'dark') html.setAttribute('data-theme', stored);
+} catch (_) {}
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('theme-toggle');
+  const updateToggle = () => {
+    const light = html.getAttribute('data-theme') === 'light';
+    toggle?.setAttribute('aria-label', light ? 'Switch to dark theme' : 'Switch to light theme');
+  };
+  updateToggle();
+  toggle?.addEventListener('click', () => {
+    const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    html.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (_) {}
+    updateToggle();
+  });
 });
 ''',
-        ),
-      ],
-      styles: appStyles,
-      body: App(),
     ),
-  );
-}
+  ],
+  styles: appStyles,
+  body: App(),
+);

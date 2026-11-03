@@ -3,6 +3,8 @@ import 'package:jaspr/jaspr.dart';
 import 'package:shared/shared.dart';
 
 import '../components/bumpable_wrap.dart';
+import '../components/icon_span.dart';
+import '../components/page_head.dart';
 import '../components/section_container.dart';
 import '../config.dart';
 
@@ -19,24 +21,25 @@ class CaseStudyPage extends StatelessComponent {
       return SectionContainer(
         child: div(classes: 'section', [
           h1([Component.text('Project not found')]),
-          a(
-            href: '$basePath/',
-            classes: 'btn btn-filled',
-            [Component.text('Back to Home')],
-          ),
+          a(href: '$basePath/', classes: 'btn btn-filled', [
+            Component.text('Back to Home'),
+          ]),
         ]),
       );
     }
 
     return div([
+      PageHead(
+        title: '${study.title} — ${study.subtitle} | Prince Nna',
+        description: study.summary,
+        path: '/case-study/${study.slug}',
+      ),
       // Hero
       SectionContainer(
         maxWidth: 800,
         child: div(classes: 'case-study-hero', [
           a(href: '$basePath/', classes: 'back-link', [
-            span(classes: 'material-icons-outlined', [
-              Component.text('arrow_back'),
-            ]),
+            const IconSpan(icon: AppIcon.arrowBack),
             Component.text(' Back to Projects'),
           ]),
           h1([Component.text(study.title)]),
@@ -61,23 +64,23 @@ class CaseStudyPage extends StatelessComponent {
                     li([Component.text(point)]),
                 ]),
             ]),
-          if (study.repoUrl != null)
-            a(
-              href: study.repoUrl!,
-              target: Target.blank,
-              classes: 'btn btn-outlined',
-              [
-                span(classes: 'material-icons-outlined', [
-                  Component.text('code'),
-                ]),
-                Component.text(' View on GitHub'),
-              ],
-            ),
+          if (study.externalLinks.isNotEmpty)
+            div(classes: 'hero-ctas', [
+              for (final link in study.externalLinks)
+                a(
+                  href: link.url,
+                  target: Target.blank,
+                  attributes: {'rel': 'noopener noreferrer'},
+                  classes: 'btn btn-outlined',
+                  [
+                    const IconSpan(icon: AppIcon.openInNew),
+                    Component.text(' ${link.label}'),
+                  ],
+                ),
+            ]),
           div(classes: 'back-nav', [
             a(href: '$basePath/', [
-              span(classes: 'material-icons-outlined', [
-                Component.text('arrow_back'),
-              ]),
+              const IconSpan(icon: AppIcon.arrowBack),
               Component.text(' Back to Projects'),
             ]),
           ]),
