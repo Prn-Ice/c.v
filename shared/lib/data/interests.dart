@@ -40,16 +40,16 @@ const interests = [
   Interest(
     title: 'Linux & NixOS',
     description:
-        'Declarative system configuration with Nix Flakes and '
-        'Home-Manager. My development environment is code.',
+        'I manage my Linux setup with Nix Flakes and Home-Manager. '
+        'My development environment is code.',
     icon: AppIcon.terminal,
     images: ['assets/images/photography/agc-20250705-003829942.webp'],
   ),
   Interest(
     title: 'Open Source',
     description:
-        '50+ issues filed, contributions to Stacked, OpenRGB, and '
-        'more. I believe in building in the open.',
+        'I contribute to projects I use, including Stacked and OpenRGB. '
+        'I like building in the open.',
     icon: AppIcon.public,
   ),
   Interest(

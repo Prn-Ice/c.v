@@ -2,12 +2,11 @@ const flutterSiteUrl = 'https://portfolio.prnice.me';
 const jasprSiteUrl = 'https://portfolio.prnice.me/jaspr';
 const siteTitle = 'Prince Nna | Senior Full Stack Engineer';
 const siteDescription =
-    'Senior Full Stack Engineer building Flutter apps, Dart/Jaspr websites, '
-    'React interfaces, and shared backend integrations.';
+    'Prince Nna builds Flutter apps, Dart/Jaspr websites, React interfaces, '
+    'and developer tools. Explore his projects and case studies.';
 const heroSummary =
-    'Senior Full Stack Engineer with 6+ years of production experience '
-    'across mobile, web, and backend integrations. Currently leading mobile '
-    'development at Expert Listing, rebuilding its Flutter app and Dart/Jaspr '
-    'website around shared application logic. Previously owned cross-platform '
-    'search at Keller Williams; independently building findaphone.ng and '
-    'open-source developer tools.';
+    'I build mobile apps, websites, and the services behind them. '
+    'I lead mobile development at Expert Listing, previously worked on '
+    'search at Keller Williams, and founded findaphone.ng. '
+    'Six years in, I still care most about the same things: software '
+    'that feels good to use and code the next person can understand.';

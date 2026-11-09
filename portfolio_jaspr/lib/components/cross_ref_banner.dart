@@ -8,7 +8,7 @@ class CrossRefBanner extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     return div(classes: 'cross-ref-banner', [
-      Component.text('This is the SEO-friendly Jaspr version. '),
+      Component.text('This is the text-first Jaspr site. '),
       a(href: flutterSiteUrl, [
         Component.text('View the interactive Flutter version \u2192'),
       ]),

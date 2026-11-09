@@ -16,10 +16,10 @@ class CrossRefBanner extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Also available as an SEO-friendly Jaspr site. ',
+            'Prefer a text-first site? ',
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: colorScheme.onSurfaceVariant,
-                ),
+              color: colorScheme.onSurfaceVariant,
+            ),
           ),
           MouseRegion(
             cursor: SystemMouseCursors.click,
@@ -28,10 +28,10 @@ class CrossRefBanner extends StatelessWidget {
               child: Text(
                 'View Jaspr version \u2192',
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: colorScheme.primary,
-                      decoration: TextDecoration.underline,
-                      decorationColor: colorScheme.primary,
-                    ),
+                  color: colorScheme.primary,
+                  decoration: TextDecoration.underline,
+                  decorationColor: colorScheme.primary,
+                ),
               ),
             ),
           ),

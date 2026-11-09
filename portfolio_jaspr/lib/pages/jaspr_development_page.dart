@@ -24,8 +24,8 @@ class JasprDevelopmentPage extends StatelessComponent {
           Component.text(
             'I’m Prince Nna, a full stack engineer building websites in Dart '
             'with Jaspr. I work across web, Flutter, and backend integrations, '
-            'with a focus on useful first-page content, shared application '
-            'logic, and maintainable code.',
+            'sharing application logic between clients and making public '
+            'content readable before JavaScript loads.',
           ),
         ]),
         h2([Component.text('Jaspr projects I’ve built')]),
@@ -36,7 +36,7 @@ class JasprDevelopmentPage extends StatelessComponent {
           Component.text(
             'Rebuilt the property website with server-rendered public pages '
             'and interactive browser islands. The website and Flutter app '
-            'consume shared pure-Dart API and Riverpod packages, backed by '
+            'use shared pure-Dart API and Riverpod packages, backed by '
             'the company’s Django REST API. The work includes property search, '
             'listings, authentication, media, and SEO comparison tooling.',
           ),
@@ -53,8 +53,8 @@ class JasprDevelopmentPage extends StatelessComponent {
           Component.text(
             'Founded and built a Nigerian phone-buying platform using Jaspr, '
             'a dart_frog API, and Supabase. The website combines recommendations, '
-            'marketplace matching, and reviewed device-support evidence. '
-            'Static pages provide useful catalogue content before browser '
+            'marketplace listings, and reviewed device-support records. '
+            'Static pages show the catalogue before browser '
             'interactions load.',
           ),
         ]),

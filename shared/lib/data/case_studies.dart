@@ -5,12 +5,12 @@ const caseStudies = [
   CaseStudy(
     slug: 'expert-listing',
     title: 'Expert Listing',
-    subtitle: 'A Shared Dart Core for Mobile and Web',
+    subtitle: 'One Dart Core, Two Clients',
     summary:
-        'Lead mobile development and rebuilt the Flutter app and Dart/Jaspr '
-        'website around shared API and application-state packages. Took the '
-        'mobile rebuild from its first commit to a store release in 24 days, '
-        'while helping hire and establish the engineering team.',
+        'I lead mobile development and rebuilt the Flutter app and Jaspr '
+        'website around shared Dart packages. The mobile rebuild reached '
+        'the stores 24 days after its first commit. I also helped hire '
+        'mobile and backend developers.',
     tags: ['Flutter', 'Jaspr', 'Riverpod', 'Django REST', 'Team Leadership'],
     dateRange: 'Sep 2026 – Present',
     role: 'Mobile Developer @ Expert Listing',
@@ -61,7 +61,7 @@ const caseStudies = [
       CaseStudySection(
         title: 'Team & Delivery',
         content:
-            'Lead the mobile development team and worked with the business '
+            'I lead the mobile team and worked with the business '
             'to interview and hire an additional mobile developer and a '
             'backend developer. Established developer documentation, Beads '
             'tracking, repository rules, and release workflows, with Patrol '
@@ -86,10 +86,9 @@ const caseStudies = [
     title: 'findaphone.ng',
     subtitle: 'A Phone-Buying Platform for Nigeria',
     summary:
-        'Founded and built a live phone-buying platform for Nigeria, from '
-        'recommendations and marketplace matching to reviewed community OS '
-        'support and NCC model-approval evidence. One Dart monorepo spans '
-        'the Jaspr website, dart_frog API, scrapers, and Supabase Postgres.',
+        'I built findaphone.ng to help Nigerians choose a phone. It brings '
+        'recommendations, marketplace listings, and reviewed device-support '
+        'records together, with a Jaspr website, Dart API, and catalogue tools.',
     tags: ['Dart', 'Jaspr', 'dart_frog', 'Supabase', 'Melos', 'Founder'],
     dateRange: 'Apr 2026 – Present',
     role: 'Library Curator @ findaphone.ng',
@@ -99,16 +98,16 @@ const caseStudies = [
       CaseStudySection(
         title: 'Challenge',
         content:
-            'Nigerians buying phones face opaque pricing, inconsistent specs, '
-            'and outright scams across fragmented marketplaces. There was no '
-            'trustworthy way to match a budget and a set of priorities to the '
-            'right phone, or to tell a fair listing from a fake one.',
+            'Buying a phone in Nigeria means sorting through unclear prices, '
+            'inconsistent specifications, and suspect listings on different '
+            'marketplaces. I wanted to help people find a phone that fits '
+            'their budget and priorities, then judge the listings they find.',
       ),
       CaseStudySection(
         title: 'Approach',
         content:
-            'Built everything in one Dart monorepo (Melos) so typed models and '
-            'pure business logic travel cleanly across tiers: a Jaspr static '
+            'Used one Dart monorepo managed with Melos to share typed models '
+            'and business logic across a Jaspr static '
             'site with @client interactive islands, a dart_frog REST API that '
             'loads the whole catalogue into memory at boot, a pure-Dart '
             'scraper, and Supabase Postgres with row-level security.',
@@ -116,23 +115,23 @@ const caseStudies = [
       CaseStudySection(
         title: 'Curation Engine',
         content:
-            'As Library Curator, I vet every phone and listing that enters the '
-            'canonical catalogue:',
+            'Automated matching and human review keep marketplace data '
+            'separate from the curated phone catalogue:',
         bulletPoints: [
           'Confidence-scored matcher (Jaccard similarity, brand multiplier, '
-              'exact-model boost) tiers listings into auto-approve, review, '
-              'and catalogue-gap buckets',
+              'exact-model boost) routes listings for automatic approval, '
+              'manual review, or catalogue expansion',
           'Admin review workflow protects already-reviewed rows from '
-              're-scrape clobbering',
+              'being overwritten by later scrapes',
           'Four idempotent enrichment pipelines (spec sheets, benchmark '
               'scores, review data, image rehosting), each writing its own '
-              'column family',
+              'set of columns without duplicating records on repeat runs',
           'Two-signal price-sanity filter catches listing scams, including a '
               'real mismatched-device listing in production',
         ],
       ),
       CaseStudySection(
-        title: 'Evidence-Led Discovery',
+        title: 'Device Support and Approval Records',
         content:
             'Extended the catalogue beyond specifications and prices with '
             'reviewed community OS support and an NCC registry browser. '
@@ -145,7 +144,7 @@ const caseStudies = [
           'NCC registry browsing distinguishes exact model Type Approval '
               'from verification of an individual device',
           'Immutable Supabase evidence snapshots and repeatable publication '
-              'tools preserve review decisions and provenance',
+              'tools preserve review decisions and their sources',
         ],
       ),
       CaseStudySection(
@@ -209,9 +208,9 @@ const caseStudies = [
       CaseStudySection(
         title: 'Outcome',
         content:
-            'A publicly playable experiment extending my work beyond '
-            'application interfaces into real-time graphics, simulation, '
-            'and multiplayer state. The linked demo is the Three.js version.',
+            'The experiment is publicly playable and combines browser '
+            'graphics, physics, and multiplayer state. The linked demo '
+            'is the Three.js version.',
       ),
     ],
   ),
@@ -222,9 +221,9 @@ const caseStudies = [
     title: 'Beads Viewer',
     subtitle: 'A Live Dashboard for Local Issue Trackers',
     summary:
-        'Built an independent Next.js dashboard for Beads, distributed as '
-        'view-beads on npm. Discover local projects, follow issue updates '
-        'in the browser, and share a live board through a Cloudflare tunnel.',
+        'I built a browser dashboard for Beads issue trackers, published '
+        'as view-beads on npm. It finds local projects, shows live issue '
+        'updates, and lets teammates view a board through a Cloudflare tunnel.',
     tags: ['Next.js', 'TypeScript', 'Developer Tooling', 'Open Source'],
     repoUrl: 'https://github.com/Prn-Ice/beads-viewer',
     links: [
@@ -253,7 +252,7 @@ const caseStudies = [
       CaseStudySection(
         title: 'Live Updates & Sharing',
         content:
-            'Follow the Beads event journal and push updates to open boards, '
+            'The server follows the Beads event journal and updates open boards, '
             'with polling when streams are unavailable. Server-mode projects '
             'can use the bd serve HTTP API instead of starting a CLI process '
             'for each read. Cloudflare tunnels let teammates view a board '
@@ -273,11 +272,11 @@ const caseStudies = [
   CaseStudy(
     slug: 'search-architecture',
     title: 'Search Architecture',
-    subtitle: 'Cross-Platform Search at Scale',
+    subtitle: 'Property Search Across Mobile and Web',
     summary:
-        'Owned end-to-end search across Consumer (Flutter), Command (React), '
-        'and CMS (Handlebars). Refactored 1 400+ LOC monolithic widgets into '
-        'decomposed Bloc architecture.',
+        'I worked on Keller Williams search across Flutter, React, and '
+        'Handlebars. I helped split Flutter widgets of over 1,400 lines '
+        'into smaller components and Blocs.',
     tags: ['Flutter', 'Bloc', 'Google Maps', 'Cross-Platform'],
     dateRange: 'Mar 2023 – May 2026',
     role: 'Senior Mobile & Web Developer @ KWRI',
@@ -286,24 +285,24 @@ const caseStudies = [
       CaseStudySection(
         title: 'Challenge',
         content:
-            'The search experience spanned three platforms with vastly different '
+            'The search experience spanned three platforms with different '
             'tech stacks. On Flutter, MapView and SearchMapView were monolithic '
-            'widgets exceeding 1 400 lines each — prop drilling, untestable '
-            'business logic tangled with UI, and no clear separation of concerns.',
+            'widgets exceeding 1,400 lines each. Business logic and UI were '
+            'tangled together, making changes and tests difficult.',
       ),
       CaseStudySection(
         title: 'Approach',
         content:
-            'Decomposed the monoliths into a clean component hierarchy: '
+            'Split the widgets into focused components: '
             'MapView \u2192 SearchMapView \u2192 SearchMapBloc \u2192 DrawingContainer \u2192 '
-            'HoverContainer. All business logic moved into Bloc; the UI became '
-            'pure reactive listeners. Introduced FilterScope, an enum driving '
+            'HoverContainer. Moved business logic into Bloc and let the UI '
+            'respond to state. Introduced FilterScope, an enum used across '
             'four platform surfaces (consumer, command, cms, luxurySite) with '
             'distinct business logic per scope.',
       ),
       CaseStudySection(
         title: 'Key Features',
-        content: 'The refactored architecture enabled rapid feature delivery:',
+        content: 'Built and maintained these search flows:',
         bulletPoints: [
           'Autocomplete with grouped results and agent search',
           'Boundary, multi-boundary, and draw-to-search modes',
@@ -315,7 +314,8 @@ const caseStudies = [
       CaseStudySection(
         title: 'Impact',
         content:
-            'Became the team\'s Flutter reference after VGV departure. '
+            'Became a Flutter reference for the team after the Very Good '
+            'Ventures consultants left. '
             'Reduced a specific widget-test feedback loop from 75 s to '
             'under 3 s by optimizing selectors. Contributed 525+ PRs across '
             '9 repos, with completed work associated with 99 distinct Jira '
@@ -328,11 +328,11 @@ const caseStudies = [
   CaseStudy(
     slug: 'search-2-command',
     title: 'Search 2.0 \u2014 Command',
-    subtitle: 'Agent Platform Feature Parity',
+    subtitle: 'Property Search for Agents',
     summary:
-        'Brought feature parity to the agent-facing Command platform. '
-        'Migrated Redux \u2192 Zustand + React Query. Built Compare Map with '
-        'geocoded pin placement.',
+        'I helped bring consumer search tools to the React-based Command '
+        'platform for agents, migrate Redux state to Zustand and React Query, '
+        'and build Compare Map with address-based pin placement.',
     tags: ['React', 'TypeScript', 'Zustand', 'GraphQL'],
     dateRange: 'Mar 2023 – May 2026',
     role: 'Senior Mobile & Web Developer @ KWRI',
@@ -348,13 +348,13 @@ const caseStudies = [
         title: 'Approach',
         content:
             'Migrated state management from Redux to Zustand + React Query '
-            'for a more ergonomic developer experience. Migrated legacy REST '
-            'endpoints to GraphQL. Wrote extensive integration tests to '
-            'ensure parity with the consumer experience.',
+            'to simplify state and server-data handling. Updated clients '
+            'from legacy REST endpoints to GraphQL and wrote integration '
+            'tests for the search flows.',
       ),
       CaseStudySection(
         title: 'Key Features',
-        content: 'Delivered a complete agent search experience:',
+        content: 'The work covered:',
         bulletPoints: [
           'Property card interactions with checkboxes and shift-click range selection',
           'Compare Map with subject overlays and custom pins',
@@ -365,8 +365,8 @@ const caseStudies = [
       CaseStudySection(
         title: 'Impact',
         content:
-            'Achieved feature parity across consumer and agent experiences, '
-            'giving agents the same powerful search tools as end users.',
+            'Brought consumer search capabilities into the agent platform, '
+            'including map comparisons and multi-listing selection.',
       ),
     ],
   ),
@@ -375,11 +375,11 @@ const caseStudies = [
   CaseStudy(
     slug: 'analytics-observability',
     title: 'Analytics & Observability',
-    subtitle: 'Team-Wide Knowledge Enablement',
+    subtitle: 'Analytics and Debugging Guides for the Team',
     summary:
-        'Drove analytics coverage and created team-wide documentation. '
-        'Authored 7 Confluence pages including GA4 tutorials with 6 video '
-        'walkthroughs.',
+        'I improved search analytics coverage and wrote seven Confluence '
+        'pages on reporting, debugging, and architecture, including six '
+        'GA4 video walkthroughs.',
     tags: ['GA4', 'Datadog', 'Documentation', 'Team Enablement'],
     dateRange: 'Mar 2023 – May 2026',
     role: 'Senior Mobile & Web Developer @ KWRI',
@@ -387,14 +387,13 @@ const caseStudies = [
       CaseStudySection(
         title: 'Challenge',
         content:
-            'The team lacked analytics literacy and debugging workflows. '
-            'There was no shared documentation for GA4 reporting, search '
-            'architecture decisions, or Flutter best practices.',
+            'The team needed shared guides for GA4 reports and debugging, '
+            'search architecture, and Flutter development practices.',
       ),
       CaseStudySection(
         title: 'Approach',
         content:
-            'Created a comprehensive GA4 guide with 6 video tutorials '
+            'Created a GA4 guide with six video tutorials '
             'covering report creation, event debugging, and custom dimensions. '
             'Wrote debugging guides for both Web and Android platforms.',
       ),
@@ -412,8 +411,8 @@ const caseStudies = [
       CaseStudySection(
         title: 'Impact',
         content:
-            '36 Confluence contributions. Established team-wide knowledge '
-            'standards and served as the Flutter SME after VGV departure.',
+            'Contributed to 36 Confluence items and gave teammates shared '
+            'references for reporting, debugging, and Flutter architecture.',
       ),
     ],
   ),
@@ -424,9 +423,9 @@ const caseStudies = [
     title: 'Skyewallet',
     subtitle: 'Production Crypto Wallet',
     summary:
-        'Production crypto wallet with buy/sell/swap, P2P marketplace, '
-        'virtual debit cards, KYC verification. Published on App Store and '
-        'Play Store.',
+        'I built Flutter wallet flows for buying and transferring crypto, '
+        'peer-to-peer payments, virtual cards, and identity verification. '
+        'The app shipped on Android and iOS.',
     tags: ['Flutter', 'Crypto', 'mTLS', 'Production'],
     dateRange: '2021 – 2023',
     role: 'Flutter Developer',
@@ -435,13 +434,12 @@ const caseStudies = [
       CaseStudySection(
         title: 'Challenge',
         content:
-            'Build a full-feature crypto platform meeting regulatory '
-            'requirements (KYC), security needs (mTLS certificate pinning), '
-            'and supporting multi-country P2P transfers \u2014 all in Flutter.',
+            'Build Flutter wallet flows with identity verification, mTLS '
+            'API security, and peer-to-peer transfers across countries.',
       ),
       CaseStudySection(
         title: 'Key Features',
-        content: 'A comprehensive fintech platform:',
+        content: 'The app supports:',
         bulletPoints: [
           'Crypto buy, sell, swap, send, and receive',
           'P2P marketplace for cross-border transfers',
@@ -460,8 +458,8 @@ const caseStudies = [
       CaseStudySection(
         title: 'Impact',
         content:
-            '90+ production builds reaching v2.15.3. 807 lib files across '
-            'the codebase. Published on both App Store and Play Store.',
+            'Delivered work across 90+ builds through v2.15.3, with '
+            'the app published on the App Store and Play Store.',
       ),
     ],
   ),
@@ -470,11 +468,11 @@ const caseStudies = [
   CaseStudy(
     slug: 'flutter-architecture-tooling',
     title: 'Flutter Architecture & Tooling',
-    subtitle: 'Codified Opinions as Code',
+    subtitle: 'Reusable Flutter Project Templates',
     summary:
-        'Codified opinionated Flutter architecture (heavy_app) with '
-        'auto_route, injectable DI, 3 build flavors, melos monorepo. '
-        'Plus 7 additional Mason templates on brickhub.dev.',
+        'I published eight Mason templates for Flutter projects. The '
+        'heavy_app template sets up routing, dependency injection, build '
+        'flavours, and a Melos monorepo; others cover packages and tests.',
     tags: ['Mason', 'Architecture', 'DI', 'Monorepo', 'Published'],
     repoUrl: 'https://github.com/Prn-Ice/mason_bricks',
     sections: [
@@ -488,7 +486,7 @@ const caseStudies = [
       CaseStudySection(
         title: 'Approach',
         content:
-            'Codified architectural opinions into Mason brick templates. '
+            'Turned repeated project setup into Mason templates. '
             'heavy_app generates a complete project with auto_route, '
             'injectable/get_it, 3 flavors (dev/staging/prod), melos monorepo, '
             'custom packages (app_ui, bloc_logger, auto_route_observer), '
@@ -496,7 +494,8 @@ const caseStudies = [
       ),
       CaseStudySection(
         title: 'Ecosystem',
-        content: '8 bricks covering the full project lifecycle:',
+        content:
+            'The eight templates cover apps, packages, tests, and linting:',
         bulletPoints: [
           'heavy_app \u2014 full project scaffold',
           'heavy_repository_package & heavy_service_package',
@@ -509,8 +508,8 @@ const caseStudies = [
       CaseStudySection(
         title: 'Impact',
         content:
-            'Published on brickhub.dev. Defines "how '
-            'apps should be built" \u2014 not just building apps.',
+            'Published on brickhub.dev so other developers can reuse '
+            'the same setup rather than assemble it for each project.',
       ),
     ],
   ),
@@ -553,8 +552,8 @@ const caseStudies = [
       CaseStudySection(
         title: 'Impact',
         content:
-            'Demonstrates Flutter beyond mobile and web \u2014 desktop systems '
-            'tooling with real hardware integration.',
+            'Provides graphical controls for Linux laptop hardware, keeping '
+            'read-only monitoring separate from authorized system changes.',
       ),
     ],
   ),
@@ -563,11 +562,11 @@ const caseStudies = [
   CaseStudy(
     slug: 'nixos-infrastructure',
     title: 'NixOS & Infrastructure',
-    subtitle: 'Infrastructure as Code, Personally',
+    subtitle: 'My Development Environment as Code',
     summary:
-        'Personal NixOS configuration with Flakes + Home-Manager, custom '
-        'hardware support (Legion Slim 7), managed Android dev environments. '
-        'OpenRGB hardware contribution.',
+        'I manage my Linux systems and Android development environments '
+        'with Nix Flakes and Home-Manager, including hardware configuration '
+        'for my Legion Slim 7. I also contributed hardware support to OpenRGB.',
     tags: ['NixOS', 'Nix Flakes', 'Hardware', 'OpenRGB'],
     repoUrl: 'https://github.com/Prn-Ice/nixos-flaky-tests',
     sections: [
@@ -596,8 +595,8 @@ const caseStudies = [
       CaseStudySection(
         title: 'Impact',
         content:
-            'Shows systems thinking \u2014 infrastructure as code applied to a '
-            'personal development environment.',
+            'Keeps system and development settings in version control '
+            'so I can reproduce the setup across machines.',
       ),
     ],
   ),

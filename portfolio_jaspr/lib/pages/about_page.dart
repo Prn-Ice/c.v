@@ -16,7 +16,7 @@ class AboutPage extends StatelessComponent {
     return div([
       const PageHead(
         title: 'About Prince Nna | Dart, Jaspr & Flutter Developer',
-        description: 'Meet Prince Nna, a full stack engineer building Flutter apps, Jaspr websites, and open-source tools. Read about his background and interests.',
+        description: 'How Prince Nna got into software, what he builds, and what he enjoys beyond code: photography, hardware, Linux, and Manchester United.',
         path: '/about',
       ),
       _bioSection(),

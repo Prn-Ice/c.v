@@ -7,8 +7,8 @@ const jasprHomeDescription =
 const jasprDevelopmentPath = '/web-development';
 const jasprDevelopmentTitle = 'Jaspr Web Developer | Prince Nna';
 const jasprDevelopmentDescription =
-    'Jaspr web developer Prince Nna builds server-rendered Dart websites, '
-    'shared Flutter/web application logic, and tested API integrations.';
+    'Prince Nna builds server-rendered Dart websites with Jaspr, shares '
+    'application logic with Flutter, and tests API integrations.';
 
 String canonicalUrlFor(String path) =>
     '$jasprSiteUrl$path${path.endsWith('/') ? '' : '/'}';

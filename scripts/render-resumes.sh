@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# render-resumes.sh — rebuild the v3 resume variants from their .md sources.
+# render-resumes.sh — rebuild resume variants from their Markdown sources.
 #
 # The resumes live in docs/ (gitignored — they carry full contact PII). Each
 # variant is authored as Markdown and rendered to three derived formats:
@@ -16,7 +16,7 @@
 #   - Google Chrome at the standard macOS path (headless print-to-PDF engine,
 #     matching the originals' "Producer: Skia/PDF" metadata)
 #
-# Usage:  bash scripts/render-resumes.sh
+# Usage: bash scripts/render-resumes.sh [variant ...]
 #
 # See RESUME_PIPELINE.md for the full architecture and rationale.
 set -uo pipefail
@@ -26,6 +26,7 @@ DOCS="docs"
 SITE_CSS="$DOCS/resume_site_theme.css"
 VUE_CSS="$DOCS/resume_vue_theme.css"
 GENKI_CSS="$DOCS/resume_genki_theme.css"
+V4_CSS="$DOCS/resume_v4_theme.css"
 CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 PANDOC=(nix run nixpkgs#pandoc --)
 WORK="$(mktemp -d)"
@@ -38,7 +39,20 @@ VARIANTS=(
   "resume_v3_flutter_mobile_targeted|Prince Nna - Senior Flutter Engineer"
   "resume_v3_frontend_vue_profile|Prince Nna - Senior Frontend Engineer"
   "resume_v3_genki_mid_backend|Prince Nna - Full-Stack Software Engineer"
+  "resume_v4_full_stack|Prince Nna - Senior Full Stack Engineer"
+  "resume_v4_flutter_mobile|Prince Nna - Senior Flutter Engineer"
 )
+
+for requested in "$@"; do
+  found=false
+  for entry in "${VARIANTS[@]}"; do
+    [ "${entry%%|*}" != "$requested" ] || found=true
+  done
+  if [ "$found" = false ]; then
+    echo "Unknown resume variant: $requested" >&2
+    exit 1
+  fi
+done
 
 render_html() { # md css title out
   "${PANDOC[@]}" "$1" -s --embed-resources --css "$2" --metadata title="$3" -o "$4"
@@ -47,7 +61,14 @@ render_html() { # md css title out
 
 render_docx() { # md out   (preserve existing styling via self-reference-doc)
   local ref="$WORK/$(basename "$2")"
-  cp "$2" "$ref" 2>/dev/null || true
+  local source_ref="$2"
+  if [ ! -f "$source_ref" ]; then
+    case "$(basename "$2" .docx)" in
+      resume_v4_full_stack) source_ref="$DOCS/resume_v3_second_pass_workflow_ats.docx" ;;
+      resume_v4_flutter_mobile) source_ref="$DOCS/resume_v3_flutter_mobile_targeted.docx" ;;
+    esac
+  fi
+  cp "$source_ref" "$ref" 2>/dev/null || true
   if [ -f "$ref" ]; then
     "${PANDOC[@]}" "$1" --reference-doc="$ref" -o "$2"
   else
@@ -79,11 +100,21 @@ render_pdf() { # html out
 
 for entry in "${VARIANTS[@]}"; do
   name="${entry%%|*}"; title="${entry#*|}"
+  if [ "$#" -gt 0 ]; then
+    selected=false
+    for requested in "$@"; do
+      [ "$requested" != "$name" ] || selected=true
+    done
+    [ "$selected" = true ] || continue
+  fi
   md="$DOCS/$name.md"
   [ -f "$md" ] || { echo "skip $name (no $md)"; continue; }
   echo "$name"
   primary_css="$SITE_CSS"
   primary_theme="site_theme"
+  if [[ "$name" == resume_v4_* ]]; then
+    primary_css="$V4_CSS"
+  fi
   if [ "$name" = "resume_v3_genki_mid_backend" ]; then
     primary_css="$GENKI_CSS"
     primary_theme="genki_theme"

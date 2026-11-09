@@ -35,14 +35,14 @@ class HomePage extends StatelessComponent {
           Component.text(
             'I build server-rendered websites in Dart with Jaspr, from the '
             'Expert Listing property platform to findaphone.ng. My work covers '
-            'shared Flutter/web application logic, API integration, and '
-            'search-friendly public pages.',
+            'shared Dart logic for Flutter and web, API integration, and '
+            'public pages that search engines can read.',
           ),
         ]),
         a(
           href: '$basePath$jasprDevelopmentPath/',
           classes: 'btn btn-outlined',
-          [Component.text('Explore my work as a Jaspr web developer')],
+          [Component.text('See my Jaspr projects')],
         ),
       ]),
     );
