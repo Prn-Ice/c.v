@@ -116,3 +116,15 @@ nix shell nixpkgs#poppler-utils -c pdftotext docs/<name>_site_theme.pdf -
    text, page breaks, and layout; run site analysis, tests, and builds.
 4. Commit only public sources and workflow files. Keep `docs/`, cover letters,
    and unrelated local changes out of the deployment commit.
+
+## Site deployment
+
+GitHub Pages must use **GitHub Actions** as its publishing source
+(`build_type: workflow`), not the `main` branch's root directory. Branch
+publishing serves the historical `index.html` instead of the built portfolio.
+Keep the custom domain `portfolio.prnice.me` and HTTPS enforcement enabled.
+
+The workflow builds Flutter at `/` and Jaspr at `/jaspr/`. After deployment,
+check both public URLs for the new copy and confirm that the About page still
+contains the handwritten bio verbatim. A successful Actions run alone does not
+prove that the correct site is being served.
