@@ -17,6 +17,32 @@ void main() {
   });
 
   for (final width in [390.0, 1280.0]) {
+    testWidgets('Ester case study and live link render at ${width.toInt()}px', (
+      tester,
+    ) async {
+      tester.view.physicalSize = Size(width, 844);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+
+      await tester.pumpWidget(
+        const MaterialApp(
+          home: Scaffold(body: CaseStudyPage(slug: 'ester')),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      expect(find.text('Ester'), findsOneWidget);
+      expect(find.text('Full-Stack Engineer'), findsOneWidget);
+      expect(find.text('The Product'), findsOneWidget);
+      final button = find.widgetWithText(OutlinedButton, 'View live project');
+      expect(button, findsOneWidget);
+      await tester.ensureVisible(button);
+      await tester.pumpAndSettle();
+      expect(button.hitTestable(), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
     testWidgets('Expert Listing links render at ${width.toInt()}px', (
       tester,
     ) async {

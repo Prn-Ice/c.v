@@ -62,6 +62,19 @@ void main() {
     },
   );
 
+  test('Ester is featured with its live website and product details', () {
+    final study = caseStudies.singleWhere((study) => study.slug == 'ester');
+    expect(study.title, 'Ester');
+    expect(study.gridSpan, 2);
+    expect(study.liveUrl, 'https://ester.ng');
+    expect(study.repoUrl, isNull);
+    expect(study.externalLinks.map((link) => link.url), ['https://ester.ng']);
+    expect(study.tags, containsAll(['Flutter', 'Jaspr', 'WhatsApp']));
+    expect(study.summary, contains('residents'));
+    expect(study.summary, contains('guards'));
+    expect(study.summary, contains('managers'));
+  });
+
   test('Lagos Landlord preserves the supplied Three.js demo URL', () {
     final study = caseStudies.singleWhere(
       (study) => study.slug == 'lagos-landlord',

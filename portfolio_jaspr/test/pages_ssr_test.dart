@@ -134,6 +134,10 @@ void main() {
             isNotNull,
           );
           expect(
+            page.querySelector('a[href="$prefix/case-study/ester/"]'),
+            isNotNull,
+          );
+          expect(
             page.querySelector('a[href="mailto:princenna@proton.me"]'),
             isNotNull,
           );
@@ -158,6 +162,30 @@ void main() {
           expect(image.attributes['loading'], 'lazy');
         }
       });
+
+      test(
+        'Ester explains the product and links to the live website',
+        () async {
+          final page = await renderPage('/case-study/ester');
+          expect(
+            page.querySelector('title')!.text,
+            contains('Visitor Access Through WhatsApp'),
+          );
+          expect(
+            page.body!.text,
+            contains('Residents create and share visitor codes.'),
+          );
+          expect(page.body!.text, contains('self-hosted Supabase'));
+          expect(
+            page.querySelector('.hero-ctas a[href="https://ester.ng"]'),
+            isNotNull,
+          );
+          expect(
+            page.querySelector('.hero-ctas a[href*="github.com"]'),
+            isNull,
+          );
+        },
+      );
 
       for (final study in caseStudies) {
         test('${study.slug} is complete without browser hydration', () async {

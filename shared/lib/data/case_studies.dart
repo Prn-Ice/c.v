@@ -80,6 +80,72 @@ const caseStudies = [
     ],
   ),
 
+  // -- Ester (featured, independent product) --
+  CaseStudy(
+    slug: 'ester',
+    title: 'Ester',
+    subtitle: 'Visitor Access Through WhatsApp',
+    summary:
+        'I built Ester to help residents invite visitors, guards check access, '
+        'and managers run an estate. Visitor codes and gate checks happen in '
+        'WhatsApp, with a Flutter dashboard for estate management and a '
+        'Jaspr website at ester.ng.',
+    tags: ['Dart', 'Flutter', 'Jaspr', 'Dart Frog', 'Supabase', 'WhatsApp'],
+    role: 'Full-Stack Engineer',
+    liveUrl: 'https://ester.ng',
+    gridSpan: 2,
+    sections: [
+      CaseStudySection(
+        title: 'Challenge',
+        content:
+            'Give residents, visitors, and guards a clear way to arrange '
+            'and check visits without asking everyone to install another '
+            'app. A single home needs a simple setup; a shared estate also '
+            'needs house records, resident onboarding, and manager oversight.',
+      ),
+      CaseStudySection(
+        title: 'The Product',
+        content:
+            'Built two ways to use Ester: manage a home or street through '
+            'WhatsApp, or add a web dashboard for estate managers. Residents '
+            'create and share visitor codes. Guards check the visitor details '
+            'before recording entry or exit.',
+        bulletPoints: [
+          'WhatsApp forms and menus for visitor codes and gate checks',
+          'Resident invitations and registration requests for manager review',
+          'Flutter dashboard for houses, residents, guards, and entry records',
+        ],
+      ),
+      CaseStudySection(
+        title: 'Architecture',
+        content:
+            'Kept the product in one Dart workspace: a Dart Frog API and '
+            'WhatsApp bot, a Flutter dashboard, and a server-rendered Jaspr '
+            'website. Shared packages hold models, repositories, and '
+            'dependency wiring. Supabase provides Postgres and authentication; '
+            'Bloc and Cubit manage dashboard behaviour, with Riverpod '
+            'supplying dependencies through Riverbloc.',
+      ),
+      CaseStudySection(
+        title: 'Access Decisions',
+        content:
+            'Gate decisions recheck the current membership and authority in '
+            'the database. Admitting a visitor records the entry and consumes '
+            'the code in one transaction. WhatsApp form contexts are signed, '
+            'time-limited, and bound to the sender and estate.',
+      ),
+      CaseStudySection(
+        title: 'Delivery',
+        content:
+            'The public website is live at ester.ng. The project uses '
+            'Railway for the website, API, and self-hosted Supabase, with '
+            'Cloudflare Pages for the Flutter dashboard. The release workflow '
+            'runs analysis, tests, builds, reviewed database migrations, '
+            'and public service health checks.',
+      ),
+    ],
+  ),
+
   // -- findaphone.ng (featured, independent product) --
   CaseStudy(
     slug: 'findaphone',

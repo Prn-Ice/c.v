@@ -44,6 +44,18 @@ class JasprDevelopmentPage extends StatelessComponent {
         a(href: '$basePath/case-study/expert-listing/', [
           Component.text('Read the Expert Listing case study'),
         ]),
+        h3([Component.text('Ester: visitor access through WhatsApp')]),
+        p([
+          Component.text(
+            'Built ester.ng with Jaspr to explain how residents share visitor '
+            'codes and guards check access through WhatsApp. The server-rendered '
+            'website sits alongside a Flutter manager dashboard and a Dart '
+            'Frog backend in one Dart workspace.',
+          ),
+        ]),
+        a(href: '$basePath/case-study/ester/', [
+          Component.text('Read the Ester case study'),
+        ]),
         h3([
           Component.text(
             'findaphone.ng: a statically generated phone catalogue',

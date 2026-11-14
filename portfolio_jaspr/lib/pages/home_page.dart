@@ -34,7 +34,8 @@ class HomePage extends StatelessComponent {
         p([
           Component.text(
             'I build server-rendered websites in Dart with Jaspr, from the '
-            'Expert Listing property platform to findaphone.ng. My work covers '
+            'Expert Listing property platform to Ester and findaphone.ng. '
+            'My work covers '
             'shared Dart logic for Flutter and web, API integration, and '
             'public pages that search engines can read.',
           ),
