@@ -6,7 +6,7 @@ const siteDescription =
     'and developer tools. Explore his projects and case studies.';
 const heroSummary =
     'I build mobile apps, websites, and the services behind them. '
-    'I lead mobile development at Expert Listing, previously worked on '
+    'I led mobile development at Expert Listing, previously worked on '
     'search at Keller Williams, and founded findaphone.ng. '
     'Six years in, I still care most about the same things: software '
     'that feels good to use and code the next person can understand.';

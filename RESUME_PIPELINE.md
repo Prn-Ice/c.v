@@ -25,6 +25,9 @@ Work history is expressed through case studies (each carries a `role` +
 The current general-purpose CVs are `resume_v4_full_stack` and
 `resume_v4_flutter_mobile`, revised on 9 November 2026 using the required
 [writing skill](.agents/skills/writing-clearly-and-concisely/SKILL.md).
+The 14 November correction records Expert Listing as September–October 2026
+and uses past tense. Earlier v4 files are preserved in
+`archive/2026-11-14-before-expert-listing-date-correction/` (local only).
 The v3 variants remain available for historical and role-specific use.
 Each Markdown source renders to HTML, PDF, and DOCX:
 
@@ -89,12 +92,14 @@ bash scripts/render-resumes.sh resume_v4_full_stack resume_v4_flutter_mobile
 ## Cover letters
 
 The current general mobile letter is
-`cover_letters/2026-11-09-flutter-mobile-engineer-general.md`.
+`cover_letters/2026-11-14-flutter-mobile-engineer-general.md`.
+It retains the 11 November letter's added product-ownership paragraph and
+corrects the Expert Listing dates and tense.
 Older letters remain unchanged. Render the new letter with the existing local
 renderer:
 
 ```bash
-python3 scripts/render-cover-letters.py cover_letters/2026-11-09-flutter-mobile-engineer-general.md
+python3 scripts/render-cover-letters.py cover_letters/2026-11-14-flutter-mobile-engineer-general.md
 ```
 
 The renderer reads letter metadata and body paragraphs from Markdown, then uses

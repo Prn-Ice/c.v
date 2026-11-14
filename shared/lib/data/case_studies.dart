@@ -1,18 +1,18 @@
 import '../models/case_study.dart';
 
 const caseStudies = [
-  // -- Expert Listing (featured, current employment) --
+  // -- Expert Listing (featured, September–October 2026 engagement) --
   CaseStudy(
     slug: 'expert-listing',
     title: 'Expert Listing',
     subtitle: 'One Dart Core, Two Clients',
     summary:
-        'I lead mobile development and rebuilt the Flutter app and Jaspr '
+        'I led mobile development and rebuilt the Flutter app and Jaspr '
         'website around shared Dart packages. The mobile rebuild reached '
         'the stores 24 days after its first commit. I also helped hire '
         'mobile and backend developers.',
     tags: ['Flutter', 'Jaspr', 'Riverpod', 'Django REST', 'Team Leadership'],
-    dateRange: 'Sep 2026 – Present',
+    dateRange: 'Sep 2026 – Oct 2026',
     role: 'Mobile Developer @ Expert Listing',
     gridSpan: 2,
     links: [
@@ -61,7 +61,7 @@ const caseStudies = [
       CaseStudySection(
         title: 'Team & Delivery',
         content:
-            'I lead the mobile team and worked with the business '
+            'I led the mobile team and worked with the business '
             'to interview and hire an additional mobile developer and a '
             'backend developer. Established developer documentation, Beads '
             'tracking, repository rules, and release workflows, with Patrol '

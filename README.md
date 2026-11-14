@@ -1,7 +1,7 @@
 # Prince Nna — CV and portfolio
 
 I'm a full-stack engineer building Flutter apps, Dart/Jaspr websites, React
-interfaces, and developer tools. I lead mobile development at Expert Listing,
+interfaces, and developer tools. I led mobile development at Expert Listing,
 previously worked on search at Keller Williams, and founded
 [findaphone.ng](https://findaphone.ng).
 

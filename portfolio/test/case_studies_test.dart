@@ -52,7 +52,12 @@ void main() {
       final study = caseStudies.first;
       expect(study.slug, 'expert-listing');
       expect(study.role, 'Mobile Developer @ Expert Listing');
-      expect(study.dateRange, 'Sep 2026 – Present');
+      expect(study.dateRange, 'Sep 2026 – Oct 2026');
+      expect(study.summary, startsWith('I led mobile development'));
+      expect(
+        heroSummary,
+        contains('I led mobile development at Expert Listing'),
+      );
       expect(study.gridSpan, 2);
       expect(study.externalLinks.map((link) => link.url), [
         'https://ex-c4a7774adafe48d88f9a8764de7c677b.ecs.us-east-1.on.aws/',

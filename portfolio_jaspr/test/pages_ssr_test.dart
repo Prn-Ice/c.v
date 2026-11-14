@@ -191,6 +191,13 @@ void main() {
         test('${study.slug} is complete without browser hydration', () async {
           final page = await renderPage('/case-study/${study.slug}');
           expect(page.querySelector('h1')!.text, study.title);
+          if (study.slug == 'expert-listing') {
+            expect(
+              page.querySelector('.date-range')!.text.trim(),
+              'Sep 2026 – Oct 2026',
+            );
+            expect(page.body!.text, contains('I led the mobile team'));
+          }
           expect(
             page.querySelectorAll('article h2').map((h2) => h2.text),
             study.sections.map((section) => section.title),
